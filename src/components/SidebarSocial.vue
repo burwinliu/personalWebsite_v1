@@ -41,7 +41,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
 a{
     width: fit-content;
     height: fit-content; 
@@ -49,7 +49,7 @@ a{
 .svg {
     width: 25px;
     height: 25px;
-    fill: #e6f1ff !important;
+    fill: $sub!important;
     display: block;
     display: block;
     margin-left: auto;
@@ -67,12 +67,18 @@ a{
     width: 1px;
     height: 90px;
     margin: 0 auto;
-    background-color: #e6f1ff;
+    background-color: $sub;
 }
 .animate-hover{
     transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1)!important; 
 }
+.animate-hover:focus, .animate-hover:active, .animate-hover:focus{
+    outline: 0px;
+}
 .animate-hover:hover svg{
-    fill: #b84a6f!important; 
+    fill: $pop !important; 
+}
+.animate-hover:focus svg{
+    fill: $primary !important; 
 }
 </style>

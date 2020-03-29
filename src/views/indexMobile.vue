@@ -15,7 +15,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
 a{
   background-color: inherit;
@@ -24,9 +24,9 @@ a{
   font-size: x-large;
 }
 html, body, .background{
-  color: #e6f1ff;
-  background-color: #0a192f;
-  scrollbar-color: #333f58 #0a192f !important;
+  color: $primary;
+  background-color: $background;
+  scrollbar-color: $mute-1 $shadow !important;
   z-index: 1;
   height: 100vh;
 }

@@ -1,14 +1,10 @@
 <template>
-  <div>
-    <component :is="componentName"/>
-    <router-view/>
+  <div class="background">
+    <router-view class="background"/>
   </div>
 </template>
 
 <script>
-import Index from '@/views/index.vue'
-import IndexMobile from '@/views/indexMobile.vue'
-
 export default {
   name: 'App',
   methods: {
@@ -22,21 +18,29 @@ export default {
     },
     onResize() {
       //callback once mounted
-      if(this.isMobile() && this.mobile !== true){
-        this.mobile = true;
-        this.componentName = 'IndexMobile';
+      if(this.isMobile() && this.$route.path !== '/mobile'){
+        this.$router.push('/mobile')
       }
-      else if(!this.isMobile() && this.mobile === true){
-        this.mobile = false;
-        this.componentName = 'Index';
+      else if(!this.isMobile() && this.$route.path === '/mobile'){
+        this.$router.push('/web')
       }
       else{
         return;
       }
     }
   },
+  beforeMount(){
+    console.log(this.$route);
+    if(this.isMobile()){
+      this.$router.push('/mobile')
+    }
+    else{
+      this.$router.push('/web')
+    }
+  },
   mounted() {
-      window.addEventListener('resize', this.onResize)
+      window.addEventListener('resize', this.onResize);
+      this.onResize();
   },
   beforeDestroy () {
       window.removeEventListener('resize', this.onResize)
@@ -44,21 +48,17 @@ export default {
   data: function(){
     return{
       mobile: Boolean,
-      componentName: "Index"
     }
   },
-  components: {
-      Index,
-      IndexMobile,
-    }
 };
 </script>
 
-<style>
+<style lang="scss">
 html, body, .background{
-  color: #e6f1ff;
-  background-color: #0a192f;
-  scrollbar-color: #333f58 #0a192f !important;
+  color: $primary;
+  background-color: $background;
+  scrollbar-color: $mute-1 $shadow !important;
+  scrollbar-arrow-color: $mute-2;
   z-index: 1;
 }
 </style>

@@ -11,6 +11,8 @@ background-color: #0a192f;
 nav-bar shadow: #081324;
 highlight: b84a6f;
 
+scrollbar arrow: b7b5e4;
+
 ## Credits
 * LogoGithub and LogoLinkedin (found in @/assets/) were found in https://github.com/bchiang7/v4
 * LogoResume and LogoEmail (found in @/assets/) were found at https://iconmonstr.com/ under the name file-24 and email-2 respectively

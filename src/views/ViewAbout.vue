@@ -4,7 +4,8 @@
         <h1> About me </h1>
     </b-row>
     <b-row class="view-about" :no-gutters=true>
-        <a> This is still under construction. Please see my resume for now. </a>
+        <a> My name is Burwin Liu. I am a Computer Scientist, a software engineer and a student. You can find out more in my Resume! This part of the site is still under construction, but 
+          we are getting there, step-by-step! </a>
     </b-row>
   </div>
 </template>
@@ -17,9 +18,9 @@ export default {
 
 <style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
-a{
+h1{
   font-family: 'Cinzel', serif;
-  font-size: x-large;
+  font-size: 40pt;
   position: relative;
   color: $sub!important;
 }

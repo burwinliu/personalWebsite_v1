@@ -39,11 +39,11 @@ export default {
     }
   },
   mounted() {
-      window.addEventListener('resize', this.onResize);
-      this.onResize();
+      //window.addEventListener('resize', this.onResize);
+      //this.onResize();
   },
   beforeDestroy () {
-      window.removeEventListener('resize', this.onResize)
+      //window.removeEventListener('resize', this.onResize)
   },
   data: function(){
     return{

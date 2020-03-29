@@ -1,26 +1,14 @@
 <template>
-    <b-col class="sidebar" align-self="center">
-        <b-row align-h="center">
-            <a class="svg-container animate-hover" href="mailto:burwinliu1@gmail.com">
-                <logo-email class="svg animate-hover "/>
-            </a>
-        </b-row>
-        <b-row align-h="center">
-            <a class="svg-container animate-hover" href="https://github.com/burwinliu" >
-                <logo-github class="svg animate-hover"/>
-            </a>
-        </b-row>
-        <b-row align-h="center">
-            <a class="svg-container animate-hover" href="https://www.linkedin.com/in/burwin-liu">
-                <logo-linked-in class="svg animate-hover"/>
-            </a>
-        </b-row>
-        <b-row align-h="center">
-            <a class="svg-container animate-hover" href="https://drive.google.com/file/d/1j-YPFhLOyvce7YggTX0xa-MR7UQR4XoM/view?usp=sharing">
-                <logo-resume class="svg animate-hover"/>
-            </a>
-        </b-row>
-    </b-col>
+    <div>
+        <b-nav vertical class="sidebar ml-auto">
+            <b-nav-item href="mailto:burwinliu1@gmail.com" class="animate-hover svg-container"><logo-email class="svg"/></b-nav-item>
+            <b-nav-item href="https://github.com/burwinliu" class="animate-hover svg-container"><logo-github class="svg"/></b-nav-item>
+            <b-nav-item href="https://www.linkedin.com/in/burwin-liu" class="animate-hover svg-container"> <logo-linked-in class="svg"/></b-nav-item>
+            <b-nav-item href="https://drive.google.com/file/d/1j-YPFhLOyvce7YggTX0xa-MR7UQR4XoM/view?usp=sharing" class="animate-hover svg-container">
+                <logo-resume class="svg"/>
+            </b-nav-item>
+        </b-nav>
+    </div>
 </template>
 
 <script>
@@ -56,7 +44,7 @@ a{
     margin-right: auto;
 }
 .svg-container{
-    padding:20px;
+    padding:15px;
 }
 .sidebar{
     width: 80px;
@@ -69,6 +57,7 @@ a{
     margin: 0 auto;
     background-color: $sub;
 }
+
 .animate-hover{
     transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1)!important; 
 }

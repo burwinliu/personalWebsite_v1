@@ -17,6 +17,9 @@
 <script>
 export default {
     name: "ViewHome",
+    created () {
+      document.title = this.$route.meta.title;
+    },
 }
 </script>
 

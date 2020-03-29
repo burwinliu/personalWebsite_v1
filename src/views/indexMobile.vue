@@ -12,6 +12,9 @@
 
 export default {
   name: 'IndexMobile',
+  created () {
+    document.title = this.$route.meta.title;
+  },
 };
 </script>
 

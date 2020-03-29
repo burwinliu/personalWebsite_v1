@@ -12,6 +12,9 @@
 <script>
 export default {
     name: "ViewContact",
+    created () {
+      document.title = this.$route.meta.title;
+    },
 }
 </script>
 

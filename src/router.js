@@ -9,7 +9,7 @@ import ViewContact from '@/views/ViewContact.vue'
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
         routes: [
         { 
             path: '/web', 
@@ -20,19 +20,36 @@ export default new Router({
                     name: 'view-home',
                     path: '',
                     component: ViewHome,
+                    meta:{
+                        title: 'Burwin Liu - Home Page',
+                    }
                 },
                 {
                     name: 'view-about',
                     path: 'about',
-                    component: ViewAbout
+                    component: ViewAbout,
+                    meta:{
+                        title: 'Burwin Liu - About Page',
+                    }
                 },
                 {
                     name: 'view-contact',
                     path: 'contact',
-                    component: ViewContact
+                    component: ViewContact,
+                    meta:{
+                        title: 'Burwin Liu - Contact Page',
+                    }
                 },
             ]
         },
-        { path: '/mobile', component: IndexMobile },
+        { 
+            path: '/mobile', 
+            component: IndexMobile,
+            meta:{
+                title: 'Burwin Liu - Mobile Home',
+            }
+        },
     ]
 });
+
+export default router;

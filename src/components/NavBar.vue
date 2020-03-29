@@ -1,16 +1,16 @@
 <template>
-  <b-navbar toggleable="lg" type="dark" variant="dark">
+  <b-navbar type="dark" variant="dark">
     <b-navbar-brand class="logo router-link focus" :to="{name: 'view-home'}">
       <img class="imgReg" :src="require(`@/assets/dark-logo.png`)" alt= "imageAltReg"/>
       <img class="imgHov" :src="require(`@/assets/dark-logo-hovered.png`)" alt= "imageAltHov"/>
       <img class="imgSel" :src="require(`@/assets/dark-logo-selected.png`)" alt= "imageAltSel"/>
     </b-navbar-brand>
-    <b-collapse id="nav-collapse" is-nav>
-      <b-navbar-nav class="ml-auto button focus" align-v="center">
+    <b-nav align="right" class="ml-auto">
+      <b-navbar-nav class="button focus" align-v="center">
         <b-nav-item class="router-link button focus" v-for="info in ButtonInfo" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
-        <b-nav-item class="router-link button focus" :href="require(`@/assets/resume.pdf`)">Resume</b-nav-item>
+        <b-nav-item class="router-link button focus" :href="require(`@/assets/resume.pdf`)" title="Burwin Liu - Resume">Resume</b-nav-item>
       </b-navbar-nav>
-    </b-collapse>
+    </b-nav>
   </b-navbar>
 </template>
 

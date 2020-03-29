@@ -1,11 +1,15 @@
 <template>
   <div>
     <nav-bar class="nav" :class="{hidden: !showNavbar, shadowed: shadowNavbar}"/>
-    <sidebar-social class="sidebar"/>
-      <b-row class="main-content" :no-gutters=true>
-        
-        <router-view />
-      </b-row>
+    <b-row no-gutters=true>
+      <b-col>
+        <sidebar-social class="sidebar-pos"/>
+      </b-col>
+      <b-col cols="10">
+      <router-view />
+      </b-col>
+      <b-col></b-col>
+    </b-row>
   </div>
 </template>
 
@@ -25,6 +29,9 @@ export default {
       shadowNavbar: false,
       lastScrollPosition: 0,
     }
+  },
+  created () {
+    document.title = this.$route.meta.title;
   },
   mounted () {
     this.lastScrollPosition = window.pageYOffset
@@ -75,27 +82,10 @@ export default {
   box-shadow: -5px 10px 8px $shadow !important;
 }
 
-.sidebar{
+.sidebar-pos{
   position: fixed !important;
-  display:flex;
-  flex-direction: column;
-  flex-grow: 1;
-  left:px;
   bottom: 0px;
-  height:fit-content;
   z-index: 2;
-  height:max-content;
-}
-
-.main-content{
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-top: 94.5px;
-  top:0px;
-  bottom:0; 
-  width: 100%; 
-  height:fit-content;
-  background-color: $background;  
 }
 
 #main-logo{

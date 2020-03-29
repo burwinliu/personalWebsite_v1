@@ -13,6 +13,9 @@ export default {
     components: {
       PDFViewer,
     },
+    created () {
+      document.title = "Burwin Liu - Resume";
+    },
 }
 </script>
 

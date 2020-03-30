@@ -9,17 +9,19 @@ To build it yourself, simply run the command npm run serve, or to build a dist u
 * Create a better colour scheme to suit my tastes
 * Add content to about and contact
 * Create a better intro screen to have more of an impact
+* responsive sidebar!
 
 ## Color schemes
 Find this scheme at src/styles/pallette.scss
 $shadow: #01060e;
 $background: #0a192f;
-$dark: #223763;
-$mute-2: #004972;
-$mute-1: #017cb1; 
-$sub: #ccd6f6;
+$dark: #282263;
+$mute-2: #5b69b9;
+$mute-1: #899cda; // for all nice to have but important
+$sub: #aebae2;
 $primary: #e6f1ff;
 $pop: #cba8f8;
+ 
 
 ## Credits
 * LogoGithub and LogoLinkedin (found in @/assets/) were found in https://github.com/bchiang7/v4

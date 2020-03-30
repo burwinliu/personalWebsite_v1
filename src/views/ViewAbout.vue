@@ -47,7 +47,7 @@ a:hover{
 .page{
   position:relative;
   height: 100%;
-  padding: 150px;
+  padding: 5%;
 }
 .view-resume{
   width: 100%; 

@@ -7,44 +7,6 @@
 <script>
 export default {
   name: 'App',
-  methods: {
-    isMobile() {
-        if( screen.width <= 1000 || screen.height <= 600 ) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    },
-    onResize() {
-      //callback once mounted
-      if(this.isMobile() && this.$route.path !== '/mobile'){
-        this.$router.push('/mobile')
-      }
-      else if(!this.isMobile() && this.$route.path === '/mobile'){
-        this.$router.push('/web')
-      }
-      else{
-        return;
-      }
-    }
-  },
-  beforeMount(){
-    console.log(this.$route);
-    if(this.isMobile()){
-      this.$router.push('/mobile')
-    }
-    else{
-      this.$router.push('/web')
-    }
-  },
-  mounted() {
-      //window.addEventListener('resize', this.onResize);
-      //this.onResize();
-  },
-  beforeDestroy () {
-      //window.removeEventListener('resize', this.onResize)
-  },
   data: function(){
     return{
       mobile: Boolean,

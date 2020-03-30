@@ -1,13 +1,17 @@
 <template>
     <div>
-        <b-nav vertical class="sidebar ml-auto">
-            <b-nav-item href="mailto:burwinliu1@gmail.com" class="animate-hover svg-container"><logo-email class="svg"/></b-nav-item>
-            <b-nav-item href="https://github.com/burwinliu" class="animate-hover svg-container"><logo-github class="svg"/></b-nav-item>
-            <b-nav-item href="https://www.linkedin.com/in/burwin-liu" class="animate-hover svg-container"> <logo-linked-in class="svg"/></b-nav-item>
-            <b-nav-item href="https://drive.google.com/file/d/1j-YPFhLOyvce7YggTX0xa-MR7UQR4XoM/view?usp=sharing" class="animate-hover svg-container">
-                <logo-resume class="svg"/>
-            </b-nav-item>
-        </b-nav>
+        <b-navbar toggleable="lg" type="dark">
+            <b-collapse id="nav-collapse" is-nav>
+                <b-nav vertical class="sidebar">
+                    <b-nav-item href="mailto:burwinliu1@gmail.com" class="animate-hover svg-container"><logo-email class="svg"/></b-nav-item>
+                    <b-nav-item href="https://github.com/burwinliu" class="animate-hover svg-container"><logo-github class="svg"/></b-nav-item>
+                    <b-nav-item href="https://www.linkedin.com/in/burwin-liu" class="animate-hover svg-container"> <logo-linked-in class="svg"/></b-nav-item>
+                    <b-nav-item href="https://drive.google.com/file/d/1j-YPFhLOyvce7YggTX0xa-MR7UQR4XoM/view?usp=sharing" class="animate-hover svg-container">
+                        <logo-resume class="svg"/>
+                    </b-nav-item>
+                </b-nav>
+            </b-collapse>
+        </b-navbar>
     </div>
 </template>
 

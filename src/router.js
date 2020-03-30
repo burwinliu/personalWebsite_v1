@@ -2,7 +2,6 @@
 import Vue from 'vue'
 import Router from 'vue-router';
 import Index from '@/views/index.vue';
-import IndexMobile from '@/views/indexMobile.vue';
 import ViewHome from '@/views/ViewHome.vue';
 import ViewAbout from '@/views/ViewAbout.vue'
 import ViewContact from '@/views/ViewContact.vue'
@@ -12,8 +11,7 @@ Vue.use(Router);
 const router = new Router({
         routes: [
         { 
-            path: '/web', 
-            alias: '/', 
+            path: '/', 
             component: Index,
             children:[
                 {
@@ -41,13 +39,6 @@ const router = new Router({
                     }
                 },
             ]
-        },
-        { 
-            path: '/mobile', 
-            component: IndexMobile,
-            meta:{
-                title: 'Burwin Liu - Mobile Home',
-            }
         },
     ]
 });

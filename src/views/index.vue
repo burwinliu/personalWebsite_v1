@@ -1,12 +1,12 @@
 <template>
   <div>
-    <nav-bar class="nav" :class="{hidden: !showNavbar, shadowed: shadowNavbar}"/>
+    <nav-bar class="index-nav" :class="{hidden: !showNavbar, shadowed: shadowNavbar}"/>
     <b-row no-gutters=true>
       <b-col>
-        <sidebar-social class="sidebar-pos"/>
+        <sidebar-social class="index-sidebar-pos"/>
       </b-col>
-      <b-col cols="10">
-      <router-view />
+      <b-col cols="10" class="index-router-wrapper">
+        <router-view />
       </b-col>
       <b-col></b-col>
     </b-row>
@@ -63,7 +63,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.nav {
+.index-nav {
   height: 60px;
   width: 100vw;
   background: $background !important;
@@ -72,26 +72,23 @@ export default {
   transition: 0.1s all ease-out;
 }
 
-.nav.hidden {
+.index-nav.hidden {
   box-shadow: none;
   transform: translate3d(0, -100%, 0);
 }
 
-.nav.shadowed{
+.index-nav.shadowed{
   background-color: $background;  
   box-shadow: -5px 10px 8px $shadow !important;
 }
 
-.sidebar-pos{
+.index-sidebar-pos{
   position: fixed !important;
   bottom: 0px;
   z-index: 2;
 }
 
-#main-logo{
-  position:relative;
-  display: flex;
-  text-align: center;
-  height: 400px;
+.index-router-wrapper{
+  padding: 80px;
 }
 </style>

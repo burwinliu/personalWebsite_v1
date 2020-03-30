@@ -1,16 +1,18 @@
 <template>
-  <b-navbar type="dark" variant="dark">
-    <b-navbar-brand class="logo router-link focus" :to="{name: 'view-home'}">
-      <img class="imgReg" :src="require(`@/assets/dark-logo.png`)" alt= "imageAltReg"/>
-      <img class="imgHov" :src="require(`@/assets/dark-logo-hovered.png`)" alt= "imageAltHov"/>
-      <img class="imgSel" :src="require(`@/assets/dark-logo-selected.png`)" alt= "imageAltSel"/>
-    </b-navbar-brand>
-    <b-nav align="right" class="ml-auto">
-      <b-navbar-nav class="button focus" align-v="center">
-        <b-nav-item class="router-link button focus" v-for="info in ButtonInfo" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
-        <b-nav-item class="router-link button focus" :href="require(`@/assets/resume.pdf`)" title="Burwin Liu - Resume">Resume</b-nav-item>
-      </b-navbar-nav>
-    </b-nav>
+  <b-navbar toggleable="lg" type="dark">
+    <b-collapse id="nav-collapse" is-nav>
+      <b-navbar-brand class="logo router-link focus" :to="{name: 'view-home'}">
+        <img class="imgReg" :src="require(`@/assets/dark-logo.png`)" alt= "imageAltReg"/>
+        <img class="imgHov" :src="require(`@/assets/dark-logo-hovered.png`)" alt= "imageAltHov"/>
+        <img class="imgSel" :src="require(`@/assets/dark-logo-selected.png`)" alt= "imageAltSel"/>
+      </b-navbar-brand>
+      <b-nav align="right" class="ml-auto">
+        <b-navbar-nav class="button focus" align-v="center">
+          <b-nav-item class="router-link button focus" v-for="info in ButtonInfo" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
+          <b-nav-item class="router-link button focus" :href="require(`@/assets/resume.pdf`)" title="Burwin Liu - Resume">Resume</b-nav-item>
+        </b-navbar-nav>
+      </b-nav>
+    </b-collapse>
   </b-navbar>
 </template>
 
@@ -36,7 +38,7 @@ export default {
 <style lang="scss" scoped>
 /* Add a black background color to the top navigation */
 
-.navbar.navbar-dark.bg-dark{
+.navbar{
     background-color:  $background !important; 
     z-index: 2;
     box-shadow: none;

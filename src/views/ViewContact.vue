@@ -1,11 +1,18 @@
 <template>
-  <div id="view-contact">
-    <b-row :no-gutters=true>
-        <h1> Contact </h1>
-    </b-row>
-    <b-row :no-gutters=true>
-        <a> This section is under construction. Please contact me through the sidebar for right now! </a>
-    </b-row>
+  <div class="align-middle" id="view-contact">
+    <div class="wrapper" align-v="center">
+      <b-row>
+          <h1 class="center-text" align-v="center"> Contact </h1>
+      </b-row>
+      <b-row>
+          <a class="center-text expand-width"> Currently, I am looking for opportunities for the upcoming Summer of 2021.</a>
+          <a class="center-text expand-width"> 
+            If you have any questions, or just want to chat, I would love to talk. Don't 
+            hesitate to contact me below, and I will try my utmost to get back to you. 
+          </a>
+      </b-row>
+      <b-button class="contact mx-auto " href="mailto:burwinliu1@gmail.com">Contact Me!</b-button>
+    </div>
   </div>
 </template>
 
@@ -28,9 +35,60 @@ h1{
   align-self:flex-start;
 
 }
+
+a{
+  color: $primary;
+  font-size: 15pt;
+  margin-bottom: 40px;
+}
+
 #view-contact{
   width: 100%; 
-  height: 80vh;
   background-color: $background;  
+  display:block;
+}
+
+.center-text{ 
+  width:100%;
+  text-align: center;
+}
+
+.contact{
+  color: $sub; 
+  background-color: $dark;
+  outline-color: $shadow;
+  border: none;
+  font-family: 'Source Code Pro', monospace!important; 
+  transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1)!important; 
+  padding: 10px 20px;
+  width:fit-content !important;
+  margin:0 auto !important;
+  display:block !important;
+  float:none !important;
+}
+
+.contact:hover{
+  background-color: $mute-3;
+}
+
+.contact:active{
+  border-color: $shadow;
+}
+
+.expand-width{
+  width:100%;
+}
+
+.text-wrap{ 
+  padding-left: 20vh;
+  padding-right:20vh;
+}
+
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80vh;
 }
 </style>

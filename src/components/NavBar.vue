@@ -8,7 +8,8 @@
       </b-navbar-brand>
       <b-nav align="right" class="ml-auto">
         <b-navbar-nav class="button focus" align-v="center">
-          <b-nav-item class="router-link button focus" v-for="info in ButtonInfo" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
+          <b-nav-item class="router-link button focus" v-for="info in ButtonInfoLocal" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
+          <b-nav-item class="router-link button focus" v-for="info in ButtonInfoWeb" :key="info.id" :href="info.href">{{info.msg}}</b-nav-item>
           <b-nav-item class="router-link button focus" :href="require(`@/assets/resume.pdf`)" title="Burwin Liu - Resume">Resume</b-nav-item>
         </b-navbar-nav>
       </b-nav>
@@ -22,9 +23,12 @@ export default {
   name: 'NavBar',
   data() {
     return{
-      ButtonInfo: [
+      ButtonInfoLocal: [
         {id:0, name:"view-about", msg: "About"},
         {id:1, name:"view-contact", msg: "Contact"},
+      ],
+      ButtonInfoWeb: [
+        {id:2, href:"https://nbviewer.jupyter.org/github/burwinliu/my-jupyter-nb/tree/master/", msg: "Notebook"},
       ]
     };
   },

@@ -39,8 +39,9 @@ a{
     height: fit-content; 
 }
 .svg {
-    width: 25px;
-    height: 25px;
+    width: 23px;
+    height: 23px;
+    overflow: visible;
     fill: $sub!important;
     display: block;
     display: block;
@@ -48,18 +49,10 @@ a{
     margin-right: auto;
 }
 .svg-container{
-    padding:15px;
+    padding:10px;
 }
 .sidebar{
-    width: 80px;
-}
-.sidebar::after {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 90px;
-    margin: 0 auto;
-    background-color: $sub;
+    width: 70px;
 }
 
 .animate-hover{

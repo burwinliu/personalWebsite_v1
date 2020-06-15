@@ -1,7 +1,8 @@
 <template>
   <div>
     <nav-bar class="index-nav" :class="{hidden: !showNavbar, shadowed: shadowNavbar}"/>
-    <b-row no-gutters=true>
+    <mobile-nav-bar/>
+    <b-row no-gutters>
       <b-col>
         <sidebar-social class="index-sidebar-pos"/>
       </b-col>
@@ -9,18 +10,20 @@
         <router-view />
       </b-col>
       <b-col></b-col>
-    </b-row>
+    </b-row> 
   </div>
 </template>
 
 <script>
 import NavBar from '@/components/NavBar.vue'
+import MobileNavBar from '@/components/MobileNavBar.vue'
 import SidebarSocial from '@/components/SidebarSocial.vue'
 
 export default {
   name: 'Index',
   components: {
       NavBar,
+      MobileNavBar,
       SidebarSocial
   },
   data: function(){

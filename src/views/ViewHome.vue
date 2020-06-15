@@ -1,15 +1,10 @@
 <template>
   <div id="home" class="center">
-    <div class="wrapper">
-      <b-row class="view-home" no-gutters>
-        <h1>Hi! My name is Burwin Liu </h1>
-      </b-row>
-      <b-row :no-gutters=true>
-        <a>Thank you for dropping by and welcome to my website</a> 
-      </b-row>
-      <b-row no-gutters>
+    <div class="wrapper px-5">
+        <h2>Hi! I am</h2>
+        <h1>Burwin Liu</h1>
+        <a>Thank you for dropping by and welcome to my website</a> <br>
         <b>There is still more to come</b> 
-      </b-row>
     </div>
   </div>
 </template>
@@ -27,15 +22,21 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
 #home{
   display: table;
-  position: absolute;
-  height:80vh;
+  height:100vh;
+  vertical-align: top;
 }
 .wrapper {
   display: table-cell;
   vertical-align: middle;
 }
 h1{
-  font-size: 60pt;
+  font-size: 50pt;
+  font-family: 'Cinzel', serif;
+  position: relative;
+}
+h2{
+  font-size: 30pt;
+  color: $sub!important;
 }
 a{
   font-family: 'Cinzel', serif;

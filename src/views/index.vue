@@ -31,18 +31,20 @@ export default {
       showNavbar: true,
       shadowNavbar: false,
       lastScrollPosition: 0,
+      windowHeight: window.innerHeight,
+      windowWidth: window.innerWidth,
     }
   },
   created () {
     document.title = this.$route.meta.title;
   },
   mounted () {
-    this.lastScrollPosition = window.pageYOffset
-    window.addEventListener('scroll', this.onScroll)
+    this.lastScrollPosition = window.pageYOffset;
+    window.addEventListener('scroll', this.onScroll);
   },
 
   beforeDestroy () {
-    window.removeEventListener('scroll', this.onScroll)
+    window.removeEventListener('scroll', this.onScroll);
   },
   methods: {
     onScroll () {
@@ -60,7 +62,7 @@ export default {
       }
       this.showNavbar = window.pageYOffset < this.lastScrollPosition
       this.lastScrollPosition = window.pageYOffset
-    }
+    },
   }
 };
 </script>
@@ -92,6 +94,8 @@ export default {
 }
 
 .index-router-wrapper{
-  padding: 80px;
+  top: 0;
+  height: fit-content;
+  z-index: 0;
 }
 </style>

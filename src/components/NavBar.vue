@@ -1,11 +1,11 @@
 <template>
   <b-navbar toggleable="lg" type="dark">
-    <b-collapse id="nav-collapse" is-nav>
-      <b-navbar-brand class="logo router-link focus" :to="{name: 'view-home'}">
+    <b-navbar-brand class="logo router-link focus" :to="{name: 'view-home'}">
         <img class="imgReg" :src="require(`@/assets/dark-logo.png`)" alt= "imageAltReg"/>
         <img class="imgHov" :src="require(`@/assets/dark-logo-hovered.png`)" alt= "imageAltHov"/>
         <img class="imgSel" :src="require(`@/assets/dark-logo-selected.png`)" alt= "imageAltSel"/>
       </b-navbar-brand>
+    <b-collapse id="nav-collapse" is-nav>
       <b-nav align="right" class="ml-auto">
         <b-navbar-nav class="button focus" align-v="center">
           <b-nav-item class="router-link button focus" v-for="info in ButtonInfoLocal" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
@@ -18,7 +18,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'NavBar',
   data() {
@@ -29,7 +28,7 @@ export default {
       ],
       ButtonInfoWeb: [
         {id:2, href:"https://nbviewer.jupyter.org/github/burwinliu/my-jupyter-nb/tree/master/", msg: "Notebook"},
-      ]
+      ],
     };
   },
   props: {

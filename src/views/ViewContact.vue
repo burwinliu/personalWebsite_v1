@@ -1,6 +1,6 @@
 <template>
   <div class="align-middle" id="view-contact">
-    <div class="wrapper" align-v="center">
+    <div class="page px-5" align-v="center">
       <b-row>
           <h1 class="center-text" align-v="center"> Contact </h1>
       </b-row>
@@ -85,10 +85,10 @@ a{
 }
 
 
-.wrapper {
+.page {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 80vh;
+  height: 100vh;
 }
 </style>

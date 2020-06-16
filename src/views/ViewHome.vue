@@ -1,6 +1,6 @@
 <template>
   <div id="home" class="center">
-    <div class="wrapper px-5">
+    <div class="wrapper" :class="{'px-5':windowWidth >= 992}">
         <h2>Hi! I am</h2>
         <h1>Burwin Liu</h1>
         <a>Thank you for dropping by and welcome to my website</a> <br>

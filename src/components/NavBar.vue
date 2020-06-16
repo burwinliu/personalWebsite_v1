@@ -6,7 +6,7 @@
         <img class="imgSel" :src="require(`@/assets/dark-logo-selected.png`)" alt= "imageAltSel"/>
       </b-navbar-brand>
 
-    <div class="absolute_position" align="right">
+    <div class="absolute_position" align="right" >
       <b-navbar-toggle class = "icon text-center" target="navbar-toggle-collapse">
         <template align-v="center" v-slot:activator="{ expanded }">
           <b-icon animation="cylon" v-on="expanded"></b-icon>
@@ -17,9 +17,9 @@
       <b-col class="class-wrapper">
         <b-navbar-nav align="right" class="ml-auto">
           <b-navbar-nav align-v="center">
-            <b-nav-item class="router-link button focus" v-for="info in ButtonInfoLocal" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
-            <b-nav-item class="router-link button focus" v-for="info in ButtonInfoWeb" :key="info.id" :href="info.href">{{info.msg}}</b-nav-item>
-            <b-nav-item class="router-link button focus" :href="require(`@/assets/resume.pdf`)" title="Burwin Liu - Resume">Resume</b-nav-item>
+            <b-nav-item class="router-link button focus px-2" v-for="info in ButtonInfoLocal" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
+            <b-nav-item class="router-link button focus px-2" v-for="info in ButtonInfoWeb" :key="info.id" :href="info.href">{{info.msg}}</b-nav-item>
+            <b-nav-item class="router-link button focus px-2" :href="require(`@/assets/resume.pdf`)" title="Burwin Liu - Resume">Resume</b-nav-item>
           </b-navbar-nav>
         </b-navbar-nav>
       </b-col>
@@ -55,6 +55,8 @@ export default {
 
 .class-wrapper{
   text-align : right !important;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .navbar{
@@ -65,6 +67,10 @@ export default {
 
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
 
+.nav-link{
+  padding-right: 0px !important;
+  padding-left:   0px !important;
+}
 
 .navbar-dark:active .navbar-toggle:active{
   color:black;

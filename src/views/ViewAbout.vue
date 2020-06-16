@@ -1,11 +1,11 @@
 <template>
   <div no-gutters>
     <b-row id="view-about" no-gutters>
-      <b-col id="introduction" class="page" :class="{'px-5':windowWidth >= 992}">
-        <b-row class="view-about" no-gutters>
+      <b-col id="introduction" :class="{'page':windowWidth >= 992, 'mobile-page':windowWidth <=992, 'px-5':windowWidth >= 992}">
+        <b-row no-gutters>
             <h1> About me </h1>
         </b-row>
-        <b-row class="view-about" no-gutters>
+        <b-row no-gutters>
             <a>
               Hello! Welcome to my about page. I'm Burwin Liu a Computer Scientist, a Software Engineer and a student. I'm currently based in 
               Irvine at the moment, studying Computer Science at the University of California, Irvine.</a>
@@ -34,12 +34,12 @@
         </b-row>
       </b-col>
     </b-row>
-    <b-row id="view-about">
-      <b-col id="Experience" class="page" :class="{'px-5':windowWidth >= 992}">
-        <b-row class="view-about" no-gutters>
+    <b-row>
+      <b-col id="Experience" :class="{'page':windowWidth >= 992, 'mobile-page':windowWidth <=992, 'px-5':windowWidth >= 992}">
+        <b-row no-gutters>
           <h1> Experience </h1>
         </b-row>
-        <b-row class="view-about" no-gutters>
+        <b-row no-gutters>
           <a>
             You can find out more in my Resume! This part of the site is still under construction, but 
             we are getting there, step-by-step.
@@ -60,6 +60,12 @@ export default {
       return{
         windowHeight: window.innerHeight,
         windowWidth: window.innerWidth,
+      }
+    },
+    mounted() {
+      window.onresize = () => {
+        this.windowHeight = window.innerHeight;
+        this.windowWidth = window.innerWidth;
       }
     },
 }
@@ -98,5 +104,14 @@ ul{
   flex-direction: column;
   justify-content: center;
   height: 100vh;
+}
+
+.mobile-page{
+  padding-top:60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: fit-content;
+  min-height: 100vh;
 }
 </style>

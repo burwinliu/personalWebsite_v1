@@ -68,6 +68,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .index-nav {
   height: fit-content;
   width: 100vw;

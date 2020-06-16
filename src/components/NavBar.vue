@@ -7,7 +7,7 @@
       </b-navbar-brand>
 
     <div class="absolute_position" align="right" >
-      <b-navbar-toggle class = "icon text-center" target="navbar-toggle-collapse">
+      <b-navbar-toggle class = "icon text-center" target="navbar-side-collapse">
         <template align-v="center" v-slot:activator="{ expanded }">
           <b-icon animation="cylon" v-on="expanded"></b-icon>
         </template>
@@ -24,6 +24,18 @@
         </b-navbar-nav>
       </b-col>
     </b-collapse>
+    <b-sidebar id="navbar-side-collapse" class ="class-wrapper sidebar" is-nav shadow right backdrop backdrop-variant="dark" bg-variant="dark">
+      <b-col class="class-wrapper">
+        <b-navbar-nav align="right" class="ml-auto px-3">
+          <b-navbar-nav align-v="center">
+            <b-nav-item class="router-link button focus px-2" v-for="info in ButtonInfoLocal" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
+            <b-nav-item class="router-link button focus px-2" v-for="info in ButtonInfoWeb" :key="info.id" :href="info.href">{{info.msg}}</b-nav-item>
+            <b-nav-item class="router-link button focus px-2" :href="require(`@/assets/resume.pdf`)" title="Burwin Liu - Resume">Resume</b-nav-item>
+          </b-navbar-nav>
+        </b-navbar-nav>
+      </b-col>
+    </b-sidebar>
+    
 
   </b-navbar>
 </template>
@@ -51,7 +63,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
 /* Add a black background color to the top navigation */
+
+div#navbar-side-collapse{
+  background-color:brown !important;
+}
 
 .class-wrapper{
   text-align : right !important;
@@ -64,8 +82,6 @@ export default {
     z-index: 2;
     box-shadow: none;
 }
-
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
 
 .nav-link{
   padding-right: 0px !important;

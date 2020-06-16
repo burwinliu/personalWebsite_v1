@@ -5,15 +5,26 @@
         <img class="imgHov" :src="require(`@/assets/dark-logo-hovered.png`)" alt= "imageAltHov"/>
         <img class="imgSel" :src="require(`@/assets/dark-logo-selected.png`)" alt= "imageAltSel"/>
       </b-navbar-brand>
-    <b-collapse id="nav-collapse" is-nav>
-      <b-nav align="right" class="ml-auto">
-        <b-navbar-nav class="button focus" align-v="center">
-          <b-nav-item class="router-link button focus" v-for="info in ButtonInfoLocal" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
-          <b-nav-item class="router-link button focus" v-for="info in ButtonInfoWeb" :key="info.id" :href="info.href">{{info.msg}}</b-nav-item>
-          <b-nav-item class="router-link button focus" :href="require(`@/assets/resume.pdf`)" title="Burwin Liu - Resume">Resume</b-nav-item>
+
+    <div class="absolute_position" align="right">
+      <b-navbar-toggle class = "icon text-center" target="navbar-toggle-collapse">
+        <template align-v="center" v-slot:activator="{ expanded }">
+          <b-icon animation="cylon" v-on="expanded"></b-icon>
+        </template>
+      </b-navbar-toggle>
+    </div>
+    <b-collapse id="navbar-toggle-collapse" class ="class-wrapper" is-nav>
+      <b-col class="class-wrapper">
+        <b-navbar-nav align="right" class="ml-auto">
+          <b-navbar-nav align-v="center">
+            <b-nav-item class="router-link button focus" v-for="info in ButtonInfoLocal" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
+            <b-nav-item class="router-link button focus" v-for="info in ButtonInfoWeb" :key="info.id" :href="info.href">{{info.msg}}</b-nav-item>
+            <b-nav-item class="router-link button focus" :href="require(`@/assets/resume.pdf`)" title="Burwin Liu - Resume">Resume</b-nav-item>
+          </b-navbar-nav>
         </b-navbar-nav>
-      </b-nav>
+      </b-col>
     </b-collapse>
+
   </b-navbar>
 </template>
 
@@ -29,6 +40,7 @@ export default {
       ButtonInfoWeb: [
         {id:2, href:"https://nbviewer.jupyter.org/github/burwinliu/my-jupyter-nb/tree/master/", msg: "Notebook"},
       ],
+      expanded: false,
     };
   },
   props: {
@@ -41,6 +53,10 @@ export default {
 <style lang="scss" scoped>
 /* Add a black background color to the top navigation */
 
+.class-wrapper{
+  text-align : right !important;
+}
+
 .navbar{
     background-color:  $background !important; 
     z-index: 2;
@@ -48,6 +64,11 @@ export default {
 }
 
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
+
+
+.navbar-dark:active .navbar-toggle:active{
+  color:black;
+}
 
 .navbar-dark .navbar-nav .nav-link{
   color: $sub; 
@@ -70,7 +91,7 @@ a:active, a:focus {
 }
 
 .logo img{ 
-  top:10%;
+  top:6px;
   display:inline-block;
   max-width: 60px;
   max-height: 60px;

@@ -69,7 +69,7 @@ export default {
 
 <style lang="scss" scoped>
 .index-nav {
-  height: 60px;
+  height: fit-content;
   width: 100vw;
   background: $background !important;
   position: fixed !important;

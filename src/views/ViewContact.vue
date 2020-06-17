@@ -22,6 +22,18 @@ export default {
     created () {
       document.title = this.$route.meta.title;
     },
+    data(){
+      return{
+        windowHeight: window.innerHeight,
+        windowWidth: window.innerWidth,
+      }
+    },
+    mounted() {
+      window.onresize = () => {
+        this.windowHeight = window.innerHeight;
+        this.windowWidth = window.innerWidth;
+      }
+    },
 }
 </script>
 

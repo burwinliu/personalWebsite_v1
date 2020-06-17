@@ -55,9 +55,12 @@ export default {
       expanded: false,
     };
   },
+  mounted () {
+    window.addEventListener('click', this.checkSide);
+  },
   props: {
     username: String
-  }
+  },
 };
 </script>
 
@@ -67,8 +70,8 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
 /* Add a black background color to the top navigation */
 
-div#navbar-side-collapse{
-  background-color:brown !important;
+.sidebar{
+  position: fixed !important;
 }
 
 .class-wrapper{

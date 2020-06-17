@@ -1,7 +1,11 @@
 <template>
   <div>
-    <nav-bar class="index-nav" :class="{hidden: !showNavbar, shadowed: shadowNavbar}"/>
-    <mobile-nav-bar/>
+    <nav-bar 
+      v-on:sideBarOpened="sideBarOpen" 
+      v-on:sideBarClosed="sideBarClose" 
+      class="index-nav" 
+      :class="{hidden: !showNavbar, shadowed: shadowNavbar}"
+    />
     <b-row no-gutters>
       <b-col>
         <sidebar-social class="index-sidebar-pos"/>
@@ -16,18 +20,17 @@
 
 <script>
 import NavBar from '@/components/NavBar.vue'
-import MobileNavBar from '@/components/MobileNavBar.vue'
 import SidebarSocial from '@/components/SidebarSocial.vue'
 
 export default {
   name: 'Index',
   components: {
       NavBar,
-      MobileNavBar,
       SidebarSocial
   },
   data: function(){
     return{
+      sidebarShown: false,
       showNavbar: true,
       shadowNavbar: false,
       lastScrollPosition: 0,
@@ -39,15 +42,31 @@ export default {
     document.title = this.$route.meta.title;
   },
   mounted () {
+    this.$root.$on('bv::collapse::state', (collapseId, isJustShown) => {
+      this.sidebarShown = isJustShown;
+    })
     this.lastScrollPosition = window.pageYOffset;
     window.addEventListener('scroll', this.onScroll);
+    window.onresize = () => {
+      this.windowHeight = window.innerHeight;
+      this.windowWidth = window.innerWidth;
+    }
   },
 
   beforeDestroy () {
     window.removeEventListener('scroll', this.onScroll);
   },
   methods: {
+    sideBarOpen(){
+      this.sidebar = true;
+    },
+    sideBarClose(){
+      this.sidebar = false;
+    },
     onScroll () {
+      if (this.sidebarShown === true){
+        return
+      }
       if (window.pageYOffset < 0) {
         return
       }

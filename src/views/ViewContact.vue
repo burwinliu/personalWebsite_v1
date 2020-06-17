@@ -1,6 +1,6 @@
 <template>
   <div class="align-middle" id="view-contact">
-    <div class="page" :class="{'px-5':windowWidth >= 992}" align-v="center">
+    <div class="page" align-v="center">
       <b-row>
           <h1 class="center-text" align-v="center"> Contact </h1>
       </b-row>

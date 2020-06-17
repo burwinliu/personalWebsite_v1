@@ -1,6 +1,6 @@
 <template>
-  <div id="home" class="center">
-    <div class="wrapper" :class="{'px-5':windowWidth >= 992}">
+  <div class="center">
+    <div class="wrapper home">
         <h2>Hi! I am</h2>
         <h1>Burwin Liu</h1>
         <a>Thank you for dropping by and welcome to my website</a> <br>
@@ -32,7 +32,7 @@ export default {
 
 <style lang='scss' scoped>
 @import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
-#home{
+.home{
   display: table;
   height:100vh;
   vertical-align: top;

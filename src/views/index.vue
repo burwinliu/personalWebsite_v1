@@ -1,8 +1,6 @@
 <template>
   <div>
     <nav-bar 
-      v-on:sideBarOpened="sideBarOpen" 
-      v-on:sideBarClosed="sideBarClose" 
       class="index-nav" 
       :class="{hidden: !showNavbar, shadowed: shadowNavbar}"
     />
@@ -10,8 +8,8 @@
       <b-col>
         <sidebar-social class="index-sidebar-pos"/>
       </b-col>
-      <b-col cols="10" class="index-router-wrapper">
-        <router-view />
+      <b-col cols="10" class="index-router-wrapper" :class="{'px-5':windowWidth >= 992}">
+        <router-view id="router"/>
       </b-col>
       <b-col></b-col>
     </b-row> 
@@ -44,6 +42,19 @@ export default {
   mounted () {
     this.$root.$on('bv::collapse::state', (collapseId, isJustShown) => {
       this.sidebarShown = isJustShown;
+      if (this.sidebarShown === true){
+        document.getElementById("router").style.top = `-${window.scrollY}px`;
+        console.log(document.getElementById("router").style)
+        document.getElementById("router").style.position = 'fixed';
+
+      }
+      else{
+        document.getElementById("router").classList.remove("sidebar-shown");
+        const scrollY = document.getElementById("router").style.top;
+        document.getElementById("router").style.position = '';
+        document.getElementById("router").style.top = '';
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      }
     })
     this.lastScrollPosition = window.pageYOffset;
     window.addEventListener('scroll', this.onScroll);
@@ -57,15 +68,9 @@ export default {
     window.removeEventListener('scroll', this.onScroll);
   },
   methods: {
-    sideBarOpen(){
-      this.sidebar = true;
-    },
-    sideBarClose(){
-      this.sidebar = false;
-    },
     onScroll () {
       if (this.sidebarShown === true){
-        return
+        return;
       }
       if (window.pageYOffset < 0) {
         return
@@ -87,6 +92,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.sidebar-shown{
+  position: fixed !important;
+}
 
 .index-nav {
   height: fit-content;

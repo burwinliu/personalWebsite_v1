@@ -1,9 +1,9 @@
 <template>
   <b-navbar toggleable="lg" type="dark">
     <b-navbar-brand class="logo router-link focus" :to="{name: 'view-home'}">
-        <img class="imgReg" :src="require(`@/assets/dark-logo.png`)" alt= "imageAltReg"/>
-        <img class="imgHov" :src="require(`@/assets/dark-logo-hovered.png`)" alt= "imageAltHov"/>
-        <img class="imgSel" :src="require(`@/assets/dark-logo-selected.png`)" alt= "imageAltSel"/>
+      <img class="imgReg" :src="require(`@/assets/dark-logo.png`)" alt= "imageAltReg"/>
+      <img class="imgHov" :src="require(`@/assets/dark-logo-hovered.png`)" alt= "imageAltHov"/>
+      <img class="imgSel" :src="require(`@/assets/dark-logo-selected.png`)" alt= "imageAltSel"/>
       </b-navbar-brand>
 
     <div class="absolute_position" align="right" >
@@ -15,7 +15,7 @@
     </div>
     <b-collapse id="navbar-toggle-collapse" class ="class-wrapper" is-nav>
       <b-col class="class-wrapper">
-        <b-navbar-nav align="right" class="ml-auto">
+        <b-navbar-nav align="right" class="ml-auto px-2">
           <b-navbar-nav align-v="center">
             <b-nav-item class="router-link button focus px-2" v-for="info in ButtonInfoLocal" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
             <b-nav-item class="router-link button focus px-2" v-for="info in ButtonInfoWeb" :key="info.id" :href="info.href">{{info.msg}}</b-nav-item>
@@ -24,13 +24,21 @@
         </b-navbar-nav>
       </b-col>
     </b-collapse>
-    <b-sidebar id="navbar-side-collapse" class ="class-wrapper sidebar" is-nav shadow right backdrop backdrop-variant="dark" bg-variant="dark">
+    <b-sidebar id="navbar-side-collapse" class ="class-wrapper sidebar" is-nav shadow right backdrop backdrop-variant="dark" bg-variant="dark" width="250px">
       <b-col class="class-wrapper">
-        <b-navbar-nav align="right" class="ml-auto px-3">
+        <b-navbar-nav align="left" class="ml-auto px-3">
           <b-navbar-nav align-v="center">
             <b-nav-item class="router-link button focus px-2" v-for="info in ButtonInfoLocal" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
             <b-nav-item class="router-link button focus px-2" v-for="info in ButtonInfoWeb" :key="info.id" :href="info.href">{{info.msg}}</b-nav-item>
             <b-nav-item class="router-link button focus px-2" :href="require(`@/assets/resume.pdf`)" title="Burwin Liu - Resume">Resume</b-nav-item>
+            <b-row class="wrap-social" align-h="center" no-gutters>
+              <b-nav-item href="mailto:burwinliu1@gmail.com" class="animate-hover svg-container"><logo-email class="svg"/></b-nav-item>
+                    <b-nav-item href="https://github.com/burwinliu" class="animate-hover svg-container"><logo-github class="svg"/></b-nav-item>
+                    <b-nav-item href="https://www.linkedin.com/in/burwin-liu" class="animate-hover svg-container"> <logo-linked-in class="svg"/></b-nav-item>
+                    <b-nav-item href="https://drive.google.com/file/d/1j-YPFhLOyvce7YggTX0xa-MR7UQR4XoM/view?usp=sharing" class="animate-hover svg-container">
+                        <logo-resume class="svg"/>
+                    </b-nav-item>
+            </b-row>
           </b-navbar-nav>
         </b-navbar-nav>
       </b-col>
@@ -41,6 +49,11 @@
 </template>
 
 <script>
+import LogoEmail from '../assets/LogoEmail.svg'
+import LogoGithub from '../assets/LogoGithub.svg'
+import LogoLinkedIn from '../assets/LogoLinkedIn.svg'
+import LogoResume from '../assets/LogoResume.svg'
+
 export default {
   name: 'NavBar',
   data() {
@@ -61,6 +74,12 @@ export default {
   props: {
     username: String
   },
+  components:{
+    LogoEmail,
+    LogoGithub,
+    LogoLinkedIn,
+    LogoResume
+  },
 };
 </script>
 
@@ -69,11 +88,6 @@ export default {
 
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
 /* Add a black background color to the top navigation */
-
-.sidebar{
-  position: fixed !important;
-}
-
 .class-wrapper{
   text-align : right !important;
   padding-right: 0;
@@ -116,8 +130,11 @@ a:active, a:focus {
 }
 
 .logo img{ 
-  top:6px;
+  z-index: 10;
+  top:2px;
   display:inline-block;
+  width: 60px;
+  height: 60px;
   max-width: 60px;
   max-height: 60px;
   position: absolute;
@@ -147,5 +164,36 @@ a:active, a:focus {
 }
 .logo:focus .imgSel{
   opacity: 1;
+}
+
+.svg {
+    width: 23px;
+    height: 23px;
+    overflow: visible;
+    fill: $sub!important;
+    display: block;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.svg-container{
+    padding:10px;
+}
+.animate-hover{
+    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1)!important; 
+}
+.animate-hover:focus, .animate-hover:active, .animate-hover:focus{
+    outline: 0px;
+}
+.animate-hover:hover svg{
+    fill: $pop !important; 
+}
+.animate-hover:focus svg{
+    fill: $primary !important; 
+}
+.wrap-social{
+  width:100%;
+  position: fixed;
+  bottom: 0;
 }
 </style>

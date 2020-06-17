@@ -5,6 +5,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'App',
   data: function(){
@@ -16,6 +17,7 @@ export default {
 </script>
 
 <style lang="scss">
+
 html, body, .background{
   color: $primary;
   background-color: $background;

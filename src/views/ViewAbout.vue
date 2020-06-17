@@ -1,7 +1,7 @@
 <template>
   <div no-gutters>
     <b-row id="view-about" no-gutters>
-      <b-col id="introduction" :class="{'page':windowWidth >= 992, 'mobile-page':windowWidth <=992, 'px-5':windowWidth >= 992}">
+      <b-col id="introduction" :class="{'page':windowWidth >= 992, 'mobile-page':windowWidth <=992}">
         <b-row no-gutters>
             <h1> About me </h1>
         </b-row>
@@ -35,7 +35,7 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col id="Experience" :class="{'page':windowWidth >= 992, 'mobile-page':windowWidth <=992, 'px-5':windowWidth >= 992}">
+      <b-col id="Experience" :class="{'page':windowWidth >= 992, 'mobile-page':windowWidth <=992}">
         <b-row no-gutters>
           <h1> Experience </h1>
         </b-row>

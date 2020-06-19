@@ -9,7 +9,9 @@
         <sidebar-social class="index-sidebar-pos"/>
       </b-col>
       <b-col cols="10" class="index-router-wrapper" :class="{'px-5':windowWidth >= 992}">
-        <router-view id="router"/>
+        <transition name="component-fade" mode="out-in">
+          <router-view id="router"/>
+        </transition>
       </b-col>
       <b-col></b-col>
     </b-row> 
@@ -127,5 +129,13 @@ export default {
   top: 0;
   height: fit-content;
   z-index: 0;
+}
+
+
+.component-fade-enter-active, .component-fade-leave-active {
+  transition: opacity .3s ease;
+}
+.component-fade-enter, .component-fade-leave-to{
+  opacity: 0;
 }
 </style>

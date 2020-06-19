@@ -1,15 +1,17 @@
 <template>
   <b-navbar toggleable="lg" type="dark">
-    <b-navbar-brand class="logo router-link focus" :to="{name: 'view-home'}">
-      <img class="imgReg" :src="require(`@/assets/dark-logo.png`)" alt= "imageAltReg"/>
-      <img class="imgHov" :src="require(`@/assets/dark-logo-hovered.png`)" alt= "imageAltHov"/>
-      <img class="imgSel" :src="require(`@/assets/dark-logo-selected.png`)" alt= "imageAltSel"/>
-      </b-navbar-brand>
+    <b-navbar-brand class="logo router-link focus" :to="{name: 'view-home'}" @mouseover="hovered()" @mouseleave="unhovered()" @click="selected()">
+      <transition name="fade">
+        <img v-if="!this.hoverLogo && !this.selectedLogo" :src="require(`@/assets/dark-logo.png`)" alt= "imageAltReg" key="imageAltReg"/>
+        <img v-if="this.hoverLogo && !this.selectedLogo" :src="require(`@/assets/dark-logo-hovered.png`)" alt= "imageAltHov" key= "imageAltHov"/>
+        <img v-if="this.selectedLogo" :src="require(`@/assets/dark-logo-selected.png`)" alt= "imageAltSel" key= "imageAltSel"/>
+      </transition>
+    </b-navbar-brand>
 
     <div class="absolute_position" align="right" >
       <b-navbar-toggle class = "icon text-center" target="navbar-side-collapse">
         <template align-v="center" v-slot:activator="{ expanded }">
-          <b-icon animation="cylon" v-on="expanded"></b-icon>
+          <b-icon v-on="expanded"></b-icon>
         </template>
       </b-navbar-toggle>
     </div>
@@ -24,13 +26,10 @@
         </b-navbar-nav>
       </b-col>
     </b-collapse>
-    <b-sidebar id="navbar-side-collapse" class ="class-wrapper" is-nav shadow right backdrop backdrop-variant="dark" bg-variant="dark" text-variant="light" width="250px">
-      <b-col class="class-wrapper sidebar">
-        <b-navbar-nav align-v="center" align="left" class="ml-auto px-3 sidebar">
-          <b-nav-item class="router-link button focus px-2" v-for="info in ButtonInfoLocal" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
-          <b-nav-item class="router-link button focus px-2" v-for="info in ButtonInfoWeb" :key="info.id" :href="info.href">{{info.msg}}</b-nav-item>
-          <b-nav-item class="router-link button focus px-2" :href="require(`@/assets/resume.pdf`)" title="Burwin Liu - Resume">Resume</b-nav-item>
-          <b-row class="wrap-social pb-4" no-gutters>
+    <b-sidebar id="navbar-side-collapse" class ="class-wrapper" is-nav shadow right backdrop backdrop-variant="dark" bg-variant="dark" text-variant="light" width="fit-content">
+      <template v-slot:footer="">
+       <div class="d-flex bg-dark text-light align-items-center px-3 py-2">
+        <b-row class="wrap-social" no-gutters>
             <b-nav-item href="mailto:burwinliu1@gmail.com" class="animate-hover svg-container"><logo-email class="svg"/></b-nav-item>
             <b-nav-item href="https://github.com/burwinliu" class="animate-hover svg-container"><logo-github class="svg"/></b-nav-item>
             <b-nav-item href="https://www.linkedin.com/in/burwin-liu" class="animate-hover svg-container"> <logo-linked-in class="svg"/></b-nav-item>
@@ -38,6 +37,13 @@
                 <logo-resume class="svg"/>
             </b-nav-item>
           </b-row>
+       </div>
+      </template>
+      <b-col class="class-wrapper sidebar">
+        <b-navbar-nav align-v="center" align="left" class="ml-auto px-3 sidebar">
+          <b-nav-item class="router-link button focus px-2" v-for="info in ButtonInfoLocal" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
+          <b-nav-item class="router-link button focus px-2" v-for="info in ButtonInfoWeb" :key="info.id" :href="info.href">{{info.msg}}</b-nav-item>
+          <b-nav-item class="router-link button focus px-2" :href="require(`@/assets/resume.pdf`)" title="Burwin Liu - Resume">Resume</b-nav-item>
         </b-navbar-nav>
       </b-col>
     </b-sidebar>
@@ -64,11 +70,14 @@ export default {
         {id:2, href:"https://nbviewer.jupyter.org/github/burwinliu/my-jupyter-nb/tree/master/", msg: "Notebook"},
       ],
       expanded: false,
+      selectedLogo: false,
+      hoverLogo: false,
     };
   },
   mounted(){
     document.addEventListener('touchstart', this.handleTouchStart);        
     document.addEventListener('touchmove', this.handleTouchMove);
+    document.addEventListener('click', this.checkClick);
   },
   props: {
     username: String,
@@ -125,6 +134,20 @@ export default {
         this.$root.$emit('bv::toggle::collapse', 'navbar-side-collapse')
       }
     },
+    checkClick(){
+      if( !this.hoverLogo && this.selectedLogo){
+        this.selectedLogo = false;
+      }
+    },
+    selected(){
+      this.selectedLogo = true;
+    },
+    hovered(){
+      this.hoverLogo = true;
+    },
+    unhovered(){
+      this.hoverLogo = false;
+    }
   },
 };
 </script>
@@ -161,10 +184,6 @@ export default {
   padding-left:   0px !important;
 }
 
-.navbar-dark:active .navbar-toggle:active{
-  color:black;
-}
-
 .navbar-dark .navbar-nav .nav-link{
   color: $sub; 
   font-family: 'Source Code Pro', monospace!important; 
@@ -186,42 +205,15 @@ a:active, a:focus {
 }
 
 .logo img{ 
-  z-index: 10;
-  top:2px;
-  display:inline-block;
-  width: 60px;
-  height: 60px;
-  max-width: 60px;
-  max-height: 60px;
   position: absolute;
-  transition: all .25s cubic-bezier(0.645,0.045,0.355,1);
+  z-index: 10;
+  top: 8px;
+  left: 16px;
+  width: 40px;
+  height: 40px;
+  max-width: 40px;
+  max-height: 40px;
 }
-
-.logo .imgReg{
-  opacity: 1;
-}
-.logo .imgHov{
-  opacity: 0;
-}
-.logo .imgSel{
-  opacity: 0;
-}
-.logo:hover .imgReg{
-  opacity: 0;
-}
-.logo:hover .imgHov{
-  opacity: 1 !important;
-}
-.logo:hover .imgSel{
-  opacity: 0;
-}
-.logo:focus .imgReg{
-  opacity: 0;
-}
-.logo:focus .imgSel{
-  opacity: 1;
-}
-
 .svg {
     width: 23px;
     height: 23px;
@@ -249,8 +241,22 @@ a:active, a:focus {
 }
 .wrap-social{
   width:auto;
-  margin-top: auto;
   margin-left: auto;
+  margin-right:auto;
+  position: sticky;
+}
 
+li{
+  display:inherit;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter-to, .fade-leave{
+  opacity: 1;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

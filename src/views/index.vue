@@ -24,7 +24,7 @@ export default {
   name: 'Index',
   components: {
       NavBar,
-      SidebarSocial
+      SidebarSocial,
   },
   data: function(){
     return{
@@ -34,38 +34,25 @@ export default {
       lastScrollPosition: 0,
       windowHeight: window.innerHeight,
       windowWidth: window.innerWidth,
+      xDown: null,                                                 
+      yDown: null, 
     }
   },
   created () {
     document.title = this.$route.meta.title;
   },
   mounted () {
-    this.$root.$on('bv::collapse::state', (collapseId, isJustShown) => {
-      this.sidebarShown = isJustShown;
-      if (this.sidebarShown === true){
-        document.getElementById("router").style.top = `-${window.scrollY}px`;
-        console.log(document.getElementById("router").style)
-        document.getElementById("router").style.position = 'fixed';
-
-      }
-      else{
-        document.getElementById("router").classList.remove("sidebar-shown");
-        const scrollY = document.getElementById("router").style.top;
-        document.getElementById("router").style.position = '';
-        document.getElementById("router").style.top = '';
-        window.scrollTo(0, parseInt(scrollY || '0') * -1);
-      }
-    })
+    this.$root.$on('bv::collapse::state', this.collapse);
     this.lastScrollPosition = window.pageYOffset;
     window.addEventListener('scroll', this.onScroll);
     window.onresize = () => {
       this.windowHeight = window.innerHeight;
       this.windowWidth = window.innerWidth;
-    }
+    };
   },
-
   beforeDestroy () {
     window.removeEventListener('scroll', this.onScroll);
+    this.$root.$off('bv::collapse::state')
   },
   methods: {
     onScroll () {
@@ -86,6 +73,21 @@ export default {
       }
       this.showNavbar = window.pageYOffset < this.lastScrollPosition
       this.lastScrollPosition = window.pageYOffset
+    },
+    collapse(collapseId, isJustShown){
+      this.sidebarShown = isJustShown;
+      if (this.sidebarShown === true){
+        document.getElementById("router").style.top = `-${window.scrollY}px`;
+        document.getElementById("router").style.position = 'fixed';
+
+      }
+      else{
+        document.getElementById("router").classList.remove("sidebar-shown");
+        const scrollY = document.getElementById("router").style.top;
+        document.getElementById("router").style.position = '';
+        document.getElementById("router").style.top = '';
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      }
     },
   }
 };

@@ -4,13 +4,11 @@ This project involves the use of Vue as the main web technology, with various vu
 To build it yourself, simply run the command npm run serve, or to build a dist use npm run build.
 
 ## ToDo 
-* More responsive site to screen size
+* Dynamic Transition between pages
 * Add a preloader on initialization
 * Need to create a status indicator to show where the user is, and allow navigation (like a file system)
 * Create a better colour scheme to suit my tastes
-* Add content to about
 * Create a better intro screen to have more of an impact
-* responsive sidebar!
 
 ## Color schemes
 Find this scheme at src/styles/pallette.scss

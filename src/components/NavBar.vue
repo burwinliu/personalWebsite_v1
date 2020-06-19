@@ -1,6 +1,6 @@
 <template>
   <b-navbar toggleable="lg" type="dark">
-    <b-navbar-brand class="logo router-link focus" :to="{name: 'view-home'}" @mouseover="hovered()" @mouseleave="unhovered()" @click="selected()">
+    <b-navbar-brand id="logo" class="logo router-link focus" :to="{name: 'view-home'}" @mouseover="hovered()" @mouseleave="unhovered()" @click="selected()">
       <transition name="fade">
         <img v-if="!this.hoverLogo && !this.selectedLogo" :src="require(`@/assets/dark-logo.png`)" alt= "imageAltReg" key="imageAltReg"/>
         <img v-if="this.hoverLogo && !this.selectedLogo" :src="require(`@/assets/dark-logo-hovered.png`)" alt= "imageAltHov" key= "imageAltHov"/>
@@ -29,9 +29,9 @@
     <b-sidebar id="navbar-side-collapse" class ="class-wrapper" is-nav shadow right backdrop backdrop-variant="dark" bg-variant="dark" text-variant="light" width="fit-content">
       <b-col class="class-wrapper sidebar">
         <b-navbar-nav align-v="center" align="left" class="ml-auto px-3 sidebar">
-          <b-nav-item class="router-link button focus px-2" v-for="info in ButtonInfoLocal" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
-          <b-nav-item class="router-link button focus px-2" v-for="info in ButtonInfoWeb" :key="info.id" :href="info.href">{{info.msg}}</b-nav-item>
-          <b-nav-item class="router-link button focus px-2" :href="require(`@/assets/resume.pdf`)" title="Burwin Liu - Resume">Resume</b-nav-item>
+          <b-nav-item class="router-link button focus px-4 py-2" v-for="info in ButtonInfoLocal" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
+          <b-nav-item class="router-link button focus px-4 py-2" v-for="info in ButtonInfoWeb" :key="info.id" :href="info.href">{{info.msg}}</b-nav-item>
+          <b-nav-item class="router-link button focus px-4 py-2" :href="require(`@/assets/resume.pdf`)" title="Burwin Liu - Resume">Resume</b-nav-item>
         </b-navbar-nav>
       </b-col>
     </b-sidebar>
@@ -83,7 +83,6 @@ export default {
         var yDiff = this.yDown - yUp;
 
         if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-            console.log(xDiff);
             if ( xDiff > 1 ) {
               this.handleLeftSwipe();
             } else if( xDiff < -1 ) {
@@ -109,9 +108,14 @@ export default {
         this.$root.$emit('bv::toggle::collapse', 'navbar-side-collapse')
       }
     },
-    checkClick(){
-      if( !this.hoverLogo && this.selectedLogo){
+    checkClick(evt){
+      if(document.getElementById("logo").contains(evt.target)){
+        this.selectedLogo = true;
+        this.hoverLogo = true;
+      }
+      else{
         this.selectedLogo = false;
+        this.hoverLogo = false;
       }
     },
     selected(){

@@ -38,6 +38,7 @@ export default {
       lastScrollPosition: 0,
       windowHeight: window.innerHeight,
       windowWidth: window.innerWidth,
+      routerWidth: 0,
       xDown: null,                                                 
       yDown: null, 
     }
@@ -46,12 +47,14 @@ export default {
     document.title = this.$route.meta.title;
   },
   mounted () {
+    this.routerWidth = document.getElementById("router").offsetWidth;
     this.$root.$on('bv::collapse::state', this.collapse);
     this.lastScrollPosition = window.pageYOffset;
     window.addEventListener('scroll', this.onScroll);
     window.onresize = () => {
       this.windowHeight = window.innerHeight;
       this.windowWidth = window.innerWidth;
+      this.routerWidth = document.getElementById("router").offsetWidth;
       if (this.windowWidth > 992 && this.sidebarShown){
         this.$root.$emit('bv::toggle::collapse', 'navbar-side-collapse');
       }
@@ -85,7 +88,9 @@ export default {
       if(collapseId === "navbar-side-collapse"){
         this.sidebarShown = isJustShown;
         if (this.sidebarShown === true){
+          console.log(this.routerWidth);
           document.getElementById("router").style.top = `-${window.scrollY}px`;
+          document.getElementById("router").style.width = `${this.routerWidth}px`;
           document.getElementById("router").style.position = 'fixed';
 
         }
@@ -93,6 +98,7 @@ export default {
           document.getElementById("router").classList.remove("sidebar-shown");
           const scrollY = document.getElementById("router").style.top;
           document.getElementById("router").style.position = '';
+          document.getElementById("router").style.width = "";
           document.getElementById("router").style.top = '';
           window.scrollTo(0, parseInt(scrollY || '0') * -1);
         }

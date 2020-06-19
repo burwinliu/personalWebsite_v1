@@ -6,7 +6,9 @@
     />
     <b-row no-gutters>
       <b-col>
-        <sidebar-social class="index-sidebar-pos"/>
+        <transition name="component-fade" mode="out-in">
+          <sidebar-social class="index-sidebar-pos"/>
+        </transition>
       </b-col>
       <b-col cols="10" class="index-router-wrapper" :class="{'px-5':windowWidth >= 992}">
         <transition name="component-fade" mode="out-in">
@@ -50,6 +52,9 @@ export default {
     window.onresize = () => {
       this.windowHeight = window.innerHeight;
       this.windowWidth = window.innerWidth;
+      if (this.windowWidth > 992 && this.sidebarShown){
+        this.$root.$emit('bv::toggle::collapse', 'navbar-side-collapse');
+      }
     };
   },
   beforeDestroy () {
@@ -77,18 +82,20 @@ export default {
       this.lastScrollPosition = window.pageYOffset
     },
     collapse(collapseId, isJustShown){
-      this.sidebarShown = isJustShown;
-      if (this.sidebarShown === true){
-        document.getElementById("router").style.top = `-${window.scrollY}px`;
-        document.getElementById("router").style.position = 'fixed';
+      if(collapseId === "navbar-side-collapse"){
+        this.sidebarShown = isJustShown;
+        if (this.sidebarShown === true){
+          document.getElementById("router").style.top = `-${window.scrollY}px`;
+          document.getElementById("router").style.position = 'fixed';
 
-      }
-      else{
-        document.getElementById("router").classList.remove("sidebar-shown");
-        const scrollY = document.getElementById("router").style.top;
-        document.getElementById("router").style.position = '';
-        document.getElementById("router").style.top = '';
-        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        }
+        else{
+          document.getElementById("router").classList.remove("sidebar-shown");
+          const scrollY = document.getElementById("router").style.top;
+          document.getElementById("router").style.position = '';
+          document.getElementById("router").style.top = '';
+          window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        }
       }
     },
   }

@@ -27,18 +27,6 @@
       </b-col>
     </b-collapse>
     <b-sidebar id="navbar-side-collapse" class ="class-wrapper" is-nav shadow right backdrop backdrop-variant="dark" bg-variant="dark" text-variant="light" width="fit-content">
-      <template v-slot:footer="">
-       <div class="d-flex bg-dark text-light align-items-center px-3 py-2">
-        <b-row class="wrap-social" no-gutters>
-            <b-nav-item href="mailto:burwinliu1@gmail.com" class="animate-hover svg-container"><logo-email class="svg"/></b-nav-item>
-            <b-nav-item href="https://github.com/burwinliu" class="animate-hover svg-container"><logo-github class="svg"/></b-nav-item>
-            <b-nav-item href="https://www.linkedin.com/in/burwin-liu" class="animate-hover svg-container"> <logo-linked-in class="svg"/></b-nav-item>
-            <b-nav-item href="https://drive.google.com/file/d/1j-YPFhLOyvce7YggTX0xa-MR7UQR4XoM/view?usp=sharing" class="animate-hover svg-container">
-                <logo-resume class="svg"/>
-            </b-nav-item>
-          </b-row>
-       </div>
-      </template>
       <b-col class="class-wrapper sidebar">
         <b-navbar-nav align-v="center" align="left" class="ml-auto px-3 sidebar">
           <b-nav-item class="router-link button focus px-2" v-for="info in ButtonInfoLocal" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
@@ -53,10 +41,6 @@
 </template>
 
 <script>
-import LogoEmail from '@/assets/LogoEmail.svg'
-import LogoGithub from '@/assets/LogoGithub.svg'
-import LogoLinkedIn from '@/assets/LogoLinkedIn.svg'
-import LogoResume from '@/assets/LogoResume.svg'
 
 export default {
   name: 'NavBar',
@@ -82,16 +66,7 @@ export default {
   props: {
     username: String,
   },
-  components:{
-    LogoEmail,
-    LogoGithub,
-    LogoLinkedIn,
-    LogoResume
-  },
   methods: {
-    expand(){
-      console.log("expand");
-    },
     handleTouchStart(evt) {           
       this.xDown = evt.touches[0].clientX;                                      
       this.yDown = evt.touches[0].clientY;                                      
@@ -214,44 +189,12 @@ a:active, a:focus {
   max-width: 40px;
   max-height: 40px;
 }
-.svg {
-    width: 23px;
-    height: 23px;
-    overflow: visible;
-    fill: $sub!important;
-    display: block;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-.svg-container{
-    padding:10px;
-}
-.animate-hover{
-    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1)!important; 
-}
-.animate-hover:focus, .animate-hover:active, .animate-hover:focus{
-    outline: 0px;
-}
-.animate-hover:hover svg{
-    fill: $pop !important; 
-}
-.animate-hover:focus svg{
-    fill: $primary !important; 
-}
-.wrap-social{
-  width:auto;
-  margin-left: auto;
-  margin-right:auto;
-  position: sticky;
-}
 
-li{
-  display:inherit;
+.fade-enter-active{
+  transition: opacity .25s;
 }
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+.fade-leave-active {
+  transition: opacity .4s;
 }
 .fade-enter-to, .fade-leave{
   opacity: 1;

@@ -4,7 +4,6 @@ This project involves the use of Vue as the main web technology, with various vu
 To build it yourself, simply run the command npm run serve, or to build a dist use npm run build.
 
 ## ToDo 
-* Dynamic Transition between pages
 * Add a preloader on initialization
 * Need to create a status indicator to show where the user is, and allow navigation (like a file system)
 * Create a better colour scheme to suit my tastes

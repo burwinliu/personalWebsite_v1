@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 .footer-wrapper{
-    background-color: $background-prime;
+    background-color: $shadow;
     width: 100%;
     height:fit-content;
     padding-top: 16px;

@@ -55,7 +55,9 @@ export default {
   },
   mounted () {
     this.routerWidth = document.getElementById("router").offsetWidth;
-    this.footerWidth = document.getElementById("footer").offsetWidth;
+    if (this.$route.name !=='view-home'){
+      this.footerWidth = document.getElementById("footer").offsetWidth;
+    }
     this.$root.$on('bv::collapse::state', this.collapse);
     this.lastScrollPosition = window.pageYOffset;
     window.addEventListener('scroll', this.onScroll);
@@ -149,7 +151,9 @@ export default {
       this.windowHeight = window.innerHeight;
       this.windowWidth = window.innerWidth;
       this.routerWidth = document.getElementById("router").offsetWidth;
-      this.footerWidth = document.getElementById("footer").offsetWidth;
+      if (this.$route.name !=='view-home'){
+        this.footerWidth = document.getElementById("footer").offsetWidth;
+      }
       this.bodyWrapSmall = (this.windowHeight<600||this.windowWidth<400) && this.$route.name!=="view-home";
       if (this.windowWidth > 992 && this.sidebarShown){
         // Collapse the sidebar if we are to big

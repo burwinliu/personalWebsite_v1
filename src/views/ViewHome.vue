@@ -1,10 +1,11 @@
 <template>
   <div class="center">
     <div class="wrapper home">
-        <h2>Hi! I am</h2>
-        <h1>Burwin Liu</h1>
-        <a>Thank you for dropping by and welcome to my website</a> <br>
-        <b>There is still more to come</b> 
+      <b-row><h2>Hi! I am</h2></b-row>
+      <b-row><h1>Burwin Liu</h1></b-row>
+      <b-row><a>I am a student of Computer Science and Software Engineering.</a> </b-row>
+      <b-row><b>I work within Software Engineering, from Application Development to Data Science and everything in between </b> </b-row>
+      <b-row><b-button :to=" 'about' " class="my-3"> Find Out More!</b-button></b-row>
     </div>
   </div>
 </template>

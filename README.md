@@ -4,9 +4,8 @@ This project involves the use of Vue as the main web technology, with various vu
 To build it yourself, simply run the command npm run serve, or to build a dist use npm run build.
 
 ## ToDo 
-* Add a preloader on initialization
+* Add more info on the About page
 * Need to create a status indicator to show where the user is, and allow navigation (like a file system)
-* Create a better colour scheme to suit my tastes
 * Create a better intro screen to have more of an impact
 
 ## Color schemes
@@ -24,4 +23,4 @@ $pop: #cba8f8;
 ## Credits
 * LogoGithub and LogoLinkedin (found in @/assets/) were found in https://github.com/bchiang7/v4
 * LogoResume and LogoEmail (found in @/assets/) were found at https://iconmonstr.com/ under the name file-24 and email-2 respectively
-* Heavy inspiration from Brittany Chiang, and (as of this version) am using her colour scheme. A huge thank you, you can find her here https://github.com/bchiang7 and see her site here https://brittanychiang.com
+* Heavy inspiration from Brittany Chiang. A huge thank you, you can find her here https://github.com/bchiang7 and see her site here https://brittanychiang.com

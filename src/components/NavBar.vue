@@ -1,6 +1,14 @@
 <template>
-  <b-navbar toggleable="lg" type="dark">
-    <b-navbar-brand id="logo" class="logo router-link focus" :to="{name: 'view-home'}" @mouseover="hovered()" @mouseleave="unhovered()" @click="selected()">
+  <b-navbar toggleable="lg" type="dark" class = "px-3">
+    <b-navbar-brand 
+      id="logo" 
+      class="logo router-link focus" 
+      :class="{'logo-large':this.windowWidth >= 992}" 
+      :to="{name: 'view-home'}" 
+      @mouseover="hovered()" 
+      @mouseleave="unhovered()" 
+      @click="selected()"
+    >
       <transition name="fade">
         <img v-if="!this.hoverLogo && !this.selectedLogo" :src="require(`@/assets/dark-logo.png`)" alt= "imageAltReg" key="imageAltReg"/>
         <img v-if="this.hoverLogo && !this.selectedLogo" :src="require(`@/assets/dark-logo-hovered.png`)" alt= "imageAltHov" key= "imageAltHov"/>
@@ -26,9 +34,18 @@
         </b-navbar-nav>
       </b-col>
     </b-collapse>
-    <b-sidebar id="navbar-side-collapse" class ="class-wrapper" is-nav shadow right backdrop backdrop-variant="dark" bg-variant="dark" text-variant="light" width="fit-content">
-      <b-col class="class-wrapper sidebar">
-        <b-navbar-nav align-v="center" align="left" class="ml-auto px-3 sidebar">
+    <b-sidebar 
+      id="navbar-side-collapse"
+      v-on:change = "onShown" 
+      class ="sidebar-wrapper" 
+      backdrop-variant="dark" 
+      bg-variant="dark" 
+      text-variant="light" 
+      width="fit-content"
+      is-nav shadow right backdrop
+    >
+      <b-col class="class-wrapper sidebar-wrapper sidebar">
+        <b-navbar-nav align-v="center" align="left" class="ml-auto px-3 sidebar-wrapper sidebar">
           <b-nav-item class="router-link button focus px-4 py-2" v-for="info in ButtonInfoLocal" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
           <b-nav-item class="router-link button focus px-4 py-2" v-for="info in ButtonInfoWeb" :key="info.id" :href="info.href">{{info.msg}}</b-nav-item>
           <b-nav-item class="router-link button focus px-4 py-2" :href="require(`@/assets/resume.pdf`)" title="Burwin Liu - Resume">Resume</b-nav-item>
@@ -56,12 +73,22 @@ export default {
       expanded: false,
       selectedLogo: false,
       hoverLogo: false,
+      windowHeight: window.innerHeight,
+      windowWidth: window.innerWidth,
     };
   },
   mounted(){
     document.addEventListener('touchstart', this.handleTouchStart);        
     document.addEventListener('touchmove', this.handleTouchMove);
     document.addEventListener('click', this.checkClick);
+    window.addEventListener("resize", this.resize);
+  },
+  beforeDestroy(){
+    document.removeEventListener('touchstart', this.handleTouchStart);        
+    document.removeEventListener('touchmove', this.handleTouchMove);
+    document.removeEventListener('click', this.checkClick);
+    window.removeEventListener("resize", this.resize);
+    
   },
   props: {
     username: String,
@@ -126,6 +153,18 @@ export default {
     },
     unhovered(){
       this.hoverLogo = false;
+    },
+    onShown(shown){
+      if (shown === true){
+        this.$emit("OpenNavBar");
+      }
+      else if(shown === false){
+        this.$emit("CloseNavBar");
+      }
+    },
+    resize(){
+      this.windowHeight = window.innerHeight;
+      this.windowWidth = window.innerWidth;
     }
   },
 };
@@ -150,6 +189,13 @@ export default {
   text-align : right !important;
   padding-right: 0;
   padding-left: 0;
+  width: fit-content;
+}
+
+.sidebar-wrapper{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .navbar{
@@ -183,11 +229,14 @@ a:active, a:focus {
   color: $primary !important;
 }
 
+.logo-large img{
+  left:33px !important;
+}
+
 .logo img{ 
   position: absolute;
   z-index: 10;
   top: 8px;
-  left: 16px;
   width: 40px;
   height: 40px;
   max-width: 40px;

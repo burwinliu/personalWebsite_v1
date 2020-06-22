@@ -1,0 +1,24 @@
+/* scss/pallette.scss */
+
+.active-tab {
+    background-color:  $background-sub !important;    
+    color: $pop !important;
+}
+
+
+
+.nav-tabs .nav-link{
+    transition: all 0.3s cubic-bezier(0.645,0.045,0.355,1)!important; 
+    border-top-left-radius: 0rem !important;
+    border-top-right-radius: 0rem !important;
+    border: none !important;
+}
+
+tab-content{
+    background-color:  $background-sub !important;
+}
+
+*:focus, *:hover{
+    outline: none !important;
+    border: none !important;
+}

@@ -46,7 +46,7 @@ export default {
             this.windowWidth = window.innerWidth;
             this.windowHeight = window.innerHeight;
         }
-    }
+    },
 }
 </script>
 

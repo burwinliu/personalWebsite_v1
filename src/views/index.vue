@@ -43,6 +43,7 @@ export default {
       windowWidth: window.innerWidth,
       routerWidth: 0,
       footerWidth: 0,
+      footerHeight: 0,
       xDown: null,                                                 
       yDown: null, 
       bodyWrapSmall: (this.windowHeight<600||this.windowWidth<400) && this.$route.name!=="view-home",
@@ -57,6 +58,7 @@ export default {
     this.routerWidth = document.getElementById("router").offsetWidth;
     if (this.$route.name !=='view-home'){
       this.footerWidth = document.getElementById("footer").offsetWidth;
+      this.footerHeight = document.getElementById("footer").offsetHeight;
     }
     this.$root.$on('bv::collapse::state', this.collapse);
     this.lastScrollPosition = window.pageYOffset;
@@ -82,7 +84,7 @@ export default {
           document.getElementById('sidebar').style.bottom = `${footer.height}px`;
           this.sidebarAttatched = true;
         }
-        else if (footer.top - 60 > sidebar.bottom && this.sidebarAttatched){
+        else if (footer.top - footer.height > sidebar.bottom && this.sidebarAttatched){
           document.getElementById('sidebar').style.bottom = `0px`;
           this.sidebarAttatched = false;
         }
@@ -128,6 +130,7 @@ export default {
             document.getElementById("footer").style.top = `${this.footerTop}px`;
             document.getElementById("footer").style.position = 'fixed';
             document.getElementById("footer").style.width = `${this.footerWidth}px`;
+            document.getElementById("footer").style.height = `${this.footerHeight}px`;
           }
 
         }
@@ -137,6 +140,7 @@ export default {
             document.getElementById("footer").style.top =''
             document.getElementById("footer").style.position = '';
             document.getElementById("footer").style.width = '';
+            document.getElementById("footer").style.height = '';
           }
 
           document.getElementById("router").classList.remove("sidebar-shown");
@@ -153,6 +157,7 @@ export default {
       this.routerWidth = document.getElementById("router").offsetWidth;
       if (this.$route.name !=='view-home'){
         this.footerWidth = document.getElementById("footer").offsetWidth;
+        this.footerHeight = document.getElementById("footer").offsetHeight;
       }
       this.bodyWrapSmall = (this.windowHeight<600||this.windowWidth<400) && this.$route.name!=="view-home";
       if (this.windowWidth > 992 && this.sidebarShown){
@@ -180,7 +185,7 @@ export default {
 
 .index-nav {
   height: fit-content;
-  width: 100vw;
+  width: 100%;
   background: $background !important;
   position: fixed !important;
   transform: translate3d(0, 0, 0);
@@ -231,6 +236,5 @@ export default {
 
 .footer{
   display:table-row;
-  position: absolute;
 }
 </style>

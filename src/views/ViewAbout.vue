@@ -7,13 +7,13 @@
         </b-row>
         <b-row no-gutters>
             <a>
-              Hello! Welcome to my about page. I'm Burwin Liu a Computer Scientist, a Software Engineer and a student. I'm currently based in 
+              Hello! I'm Burwin Liu a Computer Scientist, a Software Engineer and a student. I'm currently based in 
               Irvine at the moment, studying Computer Science at the University of California, Irvine.</a>
             <a>
-              Currently, I have worked with Data Science, Front End Design, Back End Programming and Application Development.
+              In terms of experience, I have worked with Data Science, Front End Design, Back End Programming and Application Development.
             </a> <br>
             <a>
-              I have recently worked with the following technologies:
+              Just a few of the technologies I have recently worked with are:
             </a>
         </b-row>
         <b-row>
@@ -40,10 +40,7 @@
           <h1> Experience </h1>
         </b-row>
         <b-row no-gutters>
-          <a>
-            You can find out more in my Resume! This part of the site is still under construction, but 
-            we are getting there, step-by-step.
-          </a>
+          <view-about-experience/>
         </b-row>
       </b-col>
     </b-row>
@@ -51,23 +48,34 @@
 </template>
 
 <script>
+import ViewAboutExperience from '@/views/ViewExperience.vue'
+
 export default {
-    name: "ViewAbout",
-    created () {
-      document.title = this.$route.meta.title;
-    },
-    data(){
+  name: "ViewAbout",
+  created () {
+    document.title = this.$route.meta.title;
+  },
+  components: {
+    ViewAboutExperience,
+  },
+  data(){
       return{
-        windowHeight: window.innerHeight,
-        windowWidth: window.innerWidth,
+          windowHeight: window.innerHeight,
+          windowWidth: window.innerWidth,
       }
-    },
-    mounted() {
-      window.onresize = () => {
-        this.windowHeight = window.innerHeight;
-        this.windowWidth = window.innerWidth;
+  },
+  mounted(){
+      window.addEventListener("resize", this.resize);
+  },
+  destroyed() {
+      window.removeEventListener("resize", this.resize);
+  },
+  methods: {
+      resize() {
+          this.windowWidth = window.innerWidth;
+          this.windowHeight = window.innerHeight;
       }
-    },
+  },
 }
 </script>
 
@@ -81,11 +89,6 @@ h1{
 }
 h2{
   color: $mute-1
-}
-a{
-  margin-bottom: 20px;
-  font-size: 15pt;
-  color: $primary;
 }
 a:hover{
   color: $primary;
@@ -103,7 +106,7 @@ ul{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .mobile-page{

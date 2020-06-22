@@ -1,7 +1,8 @@
 <template>
     <div class="footer-wrapper">
+        <b-row class="space"/>
         <b-col no-gutters class="text-center footer-wrapper">
-            <b-row>
+            <b-row v-if="windowWidth <=992">
                 <b-nav class="footer-contents">
                     <b-nav-item href="mailto:burwinliu1@gmail.com" class="animate-hover svg-container"><logo-email class="svg"/></b-nav-item>
                     <b-nav-item href="https://github.com/burwinliu" class="animate-hover svg-container"><logo-github class="svg"/></b-nav-item>
@@ -17,6 +18,7 @@
                 </a>
             </b-row>
         </b-col>
+        <b-row class="space"/>
     </div>
 </template>
 
@@ -34,16 +36,37 @@ export default {
         LogoLinkedIn,
         LogoResume
     },
+    data(){
+        return{
+            windowHeight: window.innerHeight,
+            windowWidth: window.innerWidth,
+        }
+    },
+    mounted(){
+        window.addEventListener("resize", this.resize);
+    },
+    destroyed() {
+        window.removeEventListener("resize", this.resize);
+    },
+    methods: {
+        resize() {
+            this.windowWidth = window.innerWidth;
+            this.windowHeight = window.innerHeight;
+        }
+    },
 }
 </script>
 
 <style lang="scss" scoped>
+.space{
+    height:16px;
+    width:100%;
+    background-color: $shadow !important;
+}
 .footer-wrapper{
     background-color: $shadow;
     width: 100%;
     height:fit-content;
-    padding-top: 16px;
-    padding-bottom: 16px;
 }
 .footer-contents{
     color: $sub-2;

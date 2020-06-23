@@ -32,6 +32,12 @@
                     </ul>
                 </b-card-text>
             </b-tab>
+            <b-tab title="University of California, Irvine" active>
+                <b-card-text id="card-2" class="card-text">
+                    <h1>Undergraduate Research on Graph Algorithms </h1>
+                    <h2>March 2020 – Present</h2>
+                </b-card-text>
+            </b-tab>
         </b-tabs>
         </b-card-group>
     </div>
@@ -45,7 +51,8 @@ export default {
         return{
             windowHeight: window.innerHeight,
             windowWidth: window.innerWidth,
-            cards: ['card-1'],
+            cards: ['card-1', 'card-2'],
+            changed: false,
         }
     },
     mounted(){
@@ -66,15 +73,17 @@ export default {
             var max = 0;
             var i = 0;
             for(i = 0; i<this.cards.length; i += 1){
+                document.getElementById(this.cards[i]).style.height = "";
+            }
+            for(i = 0; i<this.cards.length; i += 1){
                 var currentHeight = document.getElementById(this.cards[i]).offsetHeight;
                 if (currentHeight > max){
                     max = currentHeight;
                 }
             }
             for(i = 0; i<this.cards.length; i += 1){
-                document.getElementById(this.cards[i]).style.height = `${max}px`;
+                document.getElementById(this.cards[i]).style.minHeight = `${max}px`;
             }
-            console.log("CHANGED")
         }
     }
 }
@@ -83,7 +92,6 @@ export default {
 <style lang="scss" scoped>
 .exp-wrapper{
     width: 100%;
-    padding-bottom: 10%;
 }
 
 .card-text{
@@ -101,6 +109,10 @@ h1{
 }
 h2{
     font-size: 20pt;
+}
+
+ul{
+    padding-inline-start: 20px;
 }
 
 </style>

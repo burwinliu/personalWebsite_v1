@@ -25,7 +25,7 @@
     </div>
     <b-collapse id="navbar-toggle-collapse" class ="class-wrapper" is-nav>
       <b-col class="class-wrapper">
-        <b-navbar-nav align="right" class="ml-auto px-2">
+        <b-navbar-nav align="right" class="ml-auto px-3">
           <b-navbar-nav align-v="center">
             <b-nav-item class="router-link button focus px-2" v-for="info in ButtonInfoLocal" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
             <b-nav-item class="router-link button focus px-2" v-for="info in ButtonInfoWeb" :key="info.id" :href="info.href">{{info.msg}}</b-nav-item>
@@ -45,7 +45,7 @@
       is-nav shadow right backdrop
     >
       <b-col class="class-wrapper sidebar-wrapper sidebar">
-        <b-navbar-nav align-v="center" align="left" class="ml-auto px-3 sidebar-wrapper sidebar">
+        <b-navbar-nav align-v="center" align="left" class="ml-auto px-2 sidebar-wrapper sidebar">
           <b-nav-item class="router-link button focus px-4 py-2" v-for="info in ButtonInfoLocal" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
           <b-nav-item class="router-link button focus px-4 py-2" v-for="info in ButtonInfoWeb" :key="info.id" :href="info.href">{{info.msg}}</b-nav-item>
           <b-nav-item class="router-link button focus px-4 py-2" :href="require(`@/assets/resume.pdf`)" title="Burwin Liu - Resume">Resume</b-nav-item>

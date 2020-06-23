@@ -14,7 +14,7 @@
         </transition>
       </b-col>
       <transition name="component-fade" mode="out-in">
-        <router-view id="router" :class="[this.windowWidth >= 992?'router-padding':'px-5', (this.windowHeight<600 || this.windowWidth < 400)?'index-router-wrapper-small':'']"/>
+        <router-view id="router" :class="[this.windowWidth >= 992?'router-padding':'px-3', (this.windowHeight<600 || this.windowWidth < 400)?'index-router-wrapper-small':'']"/>
       </transition>
     </b-row> 
     <footer-info id="footer" class="footer" v-if="this.$route.name !== 'view-home'"/>

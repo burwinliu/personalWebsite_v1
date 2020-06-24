@@ -51,13 +51,9 @@ export default {
         return{
             windowHeight: window.innerHeight,
             windowWidth: window.innerWidth,
-            cards: ['card-1', 'card-2'],
-            changed: false,
         }
     },
     mounted(){
-        // document.getElementById(this.cards[i])
-        this.checkHeight();
         window.addEventListener("resize", this.resize);
     },
     destroyed() {
@@ -67,24 +63,7 @@ export default {
         resize() {
             this.windowWidth = window.innerWidth;
             this.windowHeight = window.innerHeight;
-            this.checkHeight();
         },
-        checkHeight(){
-            var max = 0;
-            var i = 0;
-            for(i = 0; i<this.cards.length; i += 1){
-                document.getElementById(this.cards[i]).style.height = "";
-            }
-            for(i = 0; i<this.cards.length; i += 1){
-                var currentHeight = document.getElementById(this.cards[i]).offsetHeight;
-                if (currentHeight > max){
-                    max = currentHeight;
-                }
-            }
-            for(i = 0; i<this.cards.length; i += 1){
-                document.getElementById(this.cards[i]).style.minHeight = `${max}px`;
-            }
-        }
     }
 }
 </script>
@@ -96,13 +75,14 @@ export default {
 
 .card-text{
   margin-bottom: 20px;
-  font-size: 15pt;
+  font-size: 1rem;
   color: $primary;
   height:fit-content;
 }
 
 .custom-card{
     background-color: $background-sub !important;
+    transition: 0.3s all ease-out;
 }
 h1{
     font-size: 24pt;

@@ -81,6 +81,9 @@ export default {
 
 <style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
+a{
+  font-size: 1rem;
+}
 h1{
   font-family: 'Cinzel', serif;
   font-size: 40pt;
@@ -105,7 +108,7 @@ ul{
 .page {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding-top: 20%;
   min-height: 100vh;
 }
 
@@ -113,7 +116,7 @@ ul{
   padding-top:60px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding-top: 20%;
   height: fit-content;
   min-height: 100vh;
 }

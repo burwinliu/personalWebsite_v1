@@ -88,7 +88,7 @@ h1{
   font-family: 'Cinzel', serif;
   font-size: 40pt;
   position: relative;
-  color: $sub!important;
+  color: $sub;
 }
 h2{
   color: $mute-1

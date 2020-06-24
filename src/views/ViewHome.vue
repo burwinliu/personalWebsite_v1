@@ -1,11 +1,11 @@
 <template>
   <div class="center">
     <div class="wrapper home">
-      <b-row class="text-body"><h2>Hi! I am</h2></b-row>
-      <b-row class="text-body"><h1>Burwin Liu</h1></b-row>
-      <b-row class="text-body"><a>I am a student of Computer Science and Software Engineering.</a> </b-row>
-      <b-row class="text-body"><b>I work within Software Engineering, from Application Development to Data Science and everything in between </b> </b-row>
-      <b-row class="text-body"><b-button :to="'about'" class="my-3 btn-about"> Find Out More!</b-button></b-row>
+      <b-row class="body-text"><h2>Hi! I am</h2></b-row>
+      <b-row class="body-text"><h1>Burwin Liu</h1></b-row>
+      <b-row class="body-text"><a>I am a student of Computer Science and Software Engineering.</a> </b-row>
+      <b-row class="body-text"><b>I work within Software Engineering, from Application Development to Data Science and everything in between </b> </b-row>
+      <b-row class="body-text"><b-button :to="'about'" class="my-3 btn-about"> Find Out More!</b-button></b-row>
     </div>
   </div>
 </template>
@@ -49,33 +49,35 @@ h1{
 }
 h2{
   font-size: 30pt;
-  color: $sub!important;
+  color: $sub;
 }
-a{
+div > a{
   font-family: 'Cinzel', serif;
   font-size: large;
   position: relative;
-  color: $sub!important;
+  color: $sub;
+}
+div > a:hover{
+  color:  $sub;
 }
 b{
   font-family: 'Cinzel', serif;
   font-size: medium;
   position: relative;
-  color: $mute-1!important;
+  color: $mute-1;
 }
 .view-home{
   width: 100%; 
   background-color: $background;  
 }
 
-.text-body{
+.body-text{
   margin-left: 0px;
   margin-right: 0px;
-  color: inherit!important;
 }
 
 .btn-about{
-  background-color: $background-sub !important;
+  background-color: $background-sub;
   border-color: $background-prime;
 
 }
@@ -86,5 +88,6 @@ b{
 
 .btn-about:hover{
   border-color: $mute-1;
+  background-color:$dark-2;
 }
 </style>

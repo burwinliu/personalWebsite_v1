@@ -25,11 +25,11 @@
     </div>
     <b-collapse id="navbar-toggle-collapse" class ="class-wrapper" is-nav>
       <b-col class="class-wrapper">
-        <b-navbar-nav align="right" class="ml-auto px-3">
+        <b-navbar-nav align="right" class="ml-auto">
           <b-navbar-nav align-v="center">
-            <b-nav-item class="router-link button focus px-2" v-for="info in ButtonInfoLocal" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
-            <b-nav-item class="router-link button focus px-2" v-for="info in ButtonInfoWeb" :key="info.id" :href="info.href">{{info.msg}}</b-nav-item>
-            <b-nav-item class="router-link button focus px-2" :href="require(`@/assets/resume.pdf`)" title="Burwin Liu - Resume">Resume</b-nav-item>
+            <b-nav-item class="router-link button focus" v-for="info in ButtonInfoLocal" :key="info.id" :to="{name: info.name}">{{info.msg}}</b-nav-item>
+            <b-nav-item class="router-link button focus" v-for="info in ButtonInfoWeb" :key="info.id" :href="info.href">{{info.msg}}</b-nav-item>
+            <b-nav-item class="router-link button focus" :href="require(`@/assets/resume.pdf`)" title="Burwin Liu - Resume">Resume</b-nav-item>
           </b-navbar-nav>
         </b-navbar-nav>
       </b-col>
@@ -186,7 +186,7 @@ export default {
 }
 
 .class-wrapper{
-  text-align : right !important;
+  text-align : right;
   padding-right: 0;
   padding-left: 0;
   width: fit-content;
@@ -198,39 +198,51 @@ export default {
   flex-grow: 1;
 }
 
+#navbar-side-collapse{
+  width: auto;
+}
+
 .navbar{
-    background-color:  $background !important; 
+    background-color:  $background ; 
     z-index: 2;
     box-shadow: none;
 }
 
 .nav-link{
-  padding-right: 0px !important;
-  padding-left:   0px !important;
+  padding-right: 0px ;
+  padding-left:   0px ;
 }
 
 .navbar-dark .navbar-nav .nav-link{
   color: $sub; 
-  font-family: 'Source Code Pro', monospace!important; 
-  transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1)!important; 
+  font-family: 'Source Code Pro', monospace; 
+  transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1); 
   padding: 10px 20px;
   position: relative;
 }
 
 /* Change the color of links on hover */
 .navbar-dark .navbar-nav .nav-link:hover {
-  color: $pop !important; 
+  color: $pop ; 
+}
+
+li.nav-item.router-link.button>a.nav-link{
+  padding: .5rem;
+}
+
+li.nav-item.router-link.button>a.nav-link:focus{
+  color: $pop-prime;
 }
 
 a:active, a:focus {
   outline: 0;
   border: none;
   outline-style: none;
-  color: $primary !important;
+  color: $primary ;
 }
 
 .logo-large img{
-  left:33px !important;
+  left:33px ;
 }
 
 .logo img{ 

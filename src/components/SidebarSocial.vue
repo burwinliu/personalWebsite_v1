@@ -60,7 +60,7 @@ a{
     width: 23px;
     height: 23px;
     overflow: visible;
-    fill: $sub!important;
+    fill: $sub;
     display: block;
     display: block;
     margin-left: auto;
@@ -74,15 +74,15 @@ a{
 }
 
 .animate-hover{
-    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1)!important; 
+    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1); 
 }
 .animate-hover:focus, .animate-hover:active, .animate-hover:focus{
     outline: 0px;
 }
 .animate-hover:hover svg{
-    fill: $pop !important; 
+    fill: $pop ; 
 }
 .animate-hover:focus svg{
-    fill: $primary !important; 
+    fill: $primary ; 
 }
 </style>

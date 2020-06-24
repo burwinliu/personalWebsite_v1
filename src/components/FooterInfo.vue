@@ -61,7 +61,7 @@ export default {
 .space{
     height:16px;
     width:100%;
-    background-color: $shadow !important;
+    background-color: $shadow;
 }
 .footer-wrapper{
     background-color: $shadow;
@@ -77,7 +77,7 @@ export default {
     padding-bottom:20px;
 }
 .footer-contents:hover{
-    color: $sub !important;
+    color: $sub;
     text-decoration: none;
 }
 
@@ -89,7 +89,7 @@ a{
     width: 25px;
     height: 25px;
     overflow: visible;
-    fill: $sub!important;
+    fill: $sub;
     display: block;
     display: block;
     margin-left: auto;
@@ -99,15 +99,15 @@ a{
     padding:.1rem;
 }
 .animate-hover{
-    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1)!important; 
+    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1); 
 }
 .animate-hover:focus, .animate-hover:active, .animate-hover:focus{
     outline: 0px;
 }
 .animate-hover:hover svg{
-    fill: $pop !important; 
+    fill: $pop ; 
 }
 .animate-hover:focus svg{
-    fill: $primary !important; 
+    fill: $primary ; 
 }
 </style>

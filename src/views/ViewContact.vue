@@ -43,7 +43,7 @@ h1{
   font-family: 'Cinzel', serif;
   font-size: 40pt;
   position: relative;
-  color: $sub!important;
+  color: $sub;
   align-self:flex-start;
 
 }
@@ -70,13 +70,13 @@ a{
   background-color: $dark;
   outline-color: $shadow;
   border: none;
-  font-family: 'Source Code Pro', monospace!important; 
-  transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1)!important; 
+  font-family: 'Source Code Pro', monospace; 
+  transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1); 
   padding: 10px 20px;
-  width:fit-content !important;
-  margin:0 auto !important;
-  display:block !important;
-  float:none !important;
+  width:fit-content ;
+  margin:0 auto ;
+  display:block ;
+  float:none ;
 }
 
 .contact:hover{

@@ -171,7 +171,7 @@ export default {
 
 <style lang="scss" scoped>
 .sidebar-shown{
-  position: fixed !important;
+  position: fixed ;
 }
 
 .sidebar{
@@ -186,8 +186,8 @@ export default {
 .index-nav {
   height: fit-content;
   width: 100%;
-  background: $background !important;
-  position: fixed !important;
+  background: $background;
+  position: fixed;
   transform: translate3d(0, 0, 0);
   transition: 0.1s all ease-out;
 }
@@ -199,11 +199,11 @@ export default {
 
 .index-nav.shadowed{
   background-color: $background;  
-  box-shadow: -5px 10px 8px $shadow !important;
+  box-shadow: -5px 10px 8px $shadow;
 }
 
 .index-sidebar-pos{
-  position: fixed !important;
+  position: fixed;
   bottom: 0px;
   z-index: 2;
   transition: 0.3s all ease-out;

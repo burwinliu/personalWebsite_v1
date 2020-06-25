@@ -32,12 +32,6 @@
                     </ul>
                 </b-card-text>
             </b-tab>
-            <b-tab title="University of California, Irvine" active>
-                <b-card-text id="card-2" class="card-text">
-                    <h1>Undergraduate Research on Graph Algorithms </h1>
-                    <h2>March 2020 – Present</h2>
-                </b-card-text>
-            </b-tab>
         </b-tabs>
         </b-card-group>
     </div>

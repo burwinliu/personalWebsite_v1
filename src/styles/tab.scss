@@ -7,18 +7,36 @@
 
 
 
-.nav-tabs .nav-link{
-    transition: all 0.3s cubic-bezier(0.645,0.045,0.355,1); 
+ul > li.nav-item > a.nav-link[role=tab]{
     border-top-left-radius: 0rem ;
     border-top-right-radius: 0rem ;
     border: none ;
+    background-color: $background;
+    transition: .3s all ease-out;
 }
 
-.nav-tabs:hover .nav-link:hover{
-    transition: all 0.3s cubic-bezier(0.645,0.045,0.355,1); 
+ul > li.nav-item > a.nav-link.active-tab{
     border-top-left-radius: 0rem ;
     border-top-right-radius: 0rem ;
     border: none ;
+    color: $pop;
+    background-color: $background-sub;
+    transition: .3s all ease-out;
+}
+
+ul > li.nav-item > a.nav-link:active{
+    // To remove the "border" of the tab
+    border-top-left-radius: 0rem ;
+    border-top-right-radius: 0rem ;
+    outline: none ;
+}
+
+
+li.nav-item > a.nav-link:hover{
+    border-top-left-radius: 0rem ;
+    border-top-right-radius: 0rem ;
+    border: none ;
+    color: $sub-2;
 }
 
 tab-content{

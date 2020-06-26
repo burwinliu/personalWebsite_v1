@@ -77,7 +77,7 @@ export default {
     padding-bottom:20px;
 }
 .footer-contents:hover{
-    color: $sub;
+    color: $sub-1;
     text-decoration: none;
 }
 
@@ -89,7 +89,7 @@ a{
     width: 25px;
     height: 25px;
     overflow: visible;
-    fill: $sub;
+    fill: $sub-1;
     display: block;
     display: block;
     margin-left: auto;

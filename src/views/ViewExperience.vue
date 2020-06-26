@@ -75,7 +75,7 @@ export default {
 }
 
 .custom-card{
-    background-color: $background-sub ;
+    background-color: $background-sub-1;
     transition: 0.3s all ease-out;
 }
 h1{

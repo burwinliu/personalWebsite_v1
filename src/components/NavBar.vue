@@ -214,7 +214,7 @@ export default {
 }
 
 .navbar-dark .navbar-nav .nav-link{
-  color: $sub; 
+  color: $sub-1; 
   font-family: 'Source Code Pro', monospace; 
   transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1); 
   padding: 10px 20px;

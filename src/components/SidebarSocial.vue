@@ -16,10 +16,10 @@
 </template>
 
 <script>
-import LogoEmail from '../assets/LogoEmail.svg'
-import LogoGithub from '../assets/LogoGithub.svg'
-import LogoLinkedIn from '../assets/LogoLinkedIn.svg'
-import LogoResume from '../assets/LogoResume.svg'
+import LogoEmail from '@/assets/LogoEmail.svg'
+import LogoGithub from '@/assets/LogoGithub.svg'
+import LogoLinkedIn from '@/assets/LogoLinkedIn.svg'
+import LogoResume from '@/assets/LogoResume.svg'
 
 export default {
     name: 'SidebarSocial',
@@ -52,15 +52,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-a{
-    width: fit-content;
-    height: fit-content; 
-}
 .svg {
     width: 23px;
     height: 23px;
     overflow: visible;
-    fill: $sub;
+    fill: $sub-1;
     display: block;
     display: block;
     margin-left: auto;

@@ -5,11 +5,10 @@
           <h1 class="center-text" align-v="center"> Contact </h1>
       </b-row>
       <b-row>
-          <a class="center-text expand-width"> Currently, I am looking for opportunities for the upcoming Summer of 2021.</a>
-          <a class="center-text expand-width"> 
-            If you have any questions, or just want to chat, I would love to talk. Don't 
-            hesitate to contact me below, and I will try my utmost to get back to you. 
-          </a>
+          <p class="center-text expand-width"> 
+            If you have any questions, got a project idea or just want to chat, I would love to talk. Don't 
+            hesitate to contact me below, and I will try my utmost to get back to you — my inbox is open!
+          </p>
       </b-row>
       <b-button class="contact mx-auto " href="mailto:burwinliu1@gmail.com">Contact Me!</b-button>
     </div>
@@ -43,12 +42,12 @@ h1{
   font-family: 'Cinzel', serif;
   font-size: 40pt;
   position: relative;
-  color: $sub;
+  color: $sub-1;
   align-self:flex-start;
 
 }
 
-a{
+p{
   color: $primary;
   font-size: 15pt;
   margin-bottom: 40px;
@@ -66,7 +65,7 @@ a{
 }
 
 .contact{
-  color: $sub; 
+  color: $sub-1; 
   background-color: $dark;
   outline-color: $shadow;
   border: none;
@@ -89,6 +88,9 @@ a{
 
 .expand-width{
   width:100%;
+  max-width: 600px;
+  margin-right:auto;
+  margin-left:auto;
 }
 
 .text-wrap{ 

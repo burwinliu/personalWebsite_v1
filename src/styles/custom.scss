@@ -1,10 +1,11 @@
 /* scss/pallette.scss */
 
 
-$light: $sub;
-$dark: $background-sub;
+$light: $sub-1;
+$dark: $background-sub-1;
 
 
+@import '@/styles/button.scss';
 @import '@/styles/tab.scss';
 @import '@/styles/sidebar.scss';
 @import 'node_modules/bootstrap/scss/bootstrap';

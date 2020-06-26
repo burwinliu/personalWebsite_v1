@@ -3,7 +3,7 @@
     <div class="wrapper home">
       <b-row class="body-text"><h2>Hi! I am</h2></b-row>
       <b-row class="body-text"><h1>Burwin Liu</h1></b-row>
-      <b-row class="body-text"><a>I am a student of Computer Science and Software Engineering.</a> </b-row>
+      <b-row class="body-text"><p>I am a student of Computer Science and Software Engineering.</p> </b-row>
       <b-row class="body-text"><b>I work within Software Engineering, from Application Development to Data Science and everything in between </b> </b-row>
       <b-row class="body-text"><b-button :to="'about'" class="my-3 btn-about"> Find Out More!</b-button></b-row>
     </div>
@@ -49,16 +49,16 @@ h1{
 }
 h2{
   font-size: 30pt;
-  color: $sub;
+  color: $sub-1;
 }
-div > a{
+div > p{
   font-family: 'Cinzel', serif;
   font-size: large;
   position: relative;
-  color: $sub;
+  color: $sub-1;
 }
-div > a:hover{
-  color:  $sub;
+div > p:hover{
+  color:  $sub-1;
 }
 b{
   font-family: 'Cinzel', serif;
@@ -77,7 +77,8 @@ b{
 }
 
 .btn-about{
-  background-color: $background-sub;
+  color: $sub-1;
+  background-color: $background-sub-1;
   border-color: $background-prime;
 
 }
@@ -87,7 +88,8 @@ b{
 }
 
 .btn-about:hover{
-  border-color: $mute-1;
-  background-color:$dark-2;
+  color: $pop;
+  border-color: $mute-2;
+  background-color:$background-sub-1;
 }
 </style>

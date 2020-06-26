@@ -221,6 +221,9 @@ export default {
 .router-padding{
   padding-left:15%;
   padding-right:15%;
+  max-width: 1600px;
+  margin-left:auto;
+  margin-right: auto;
 }
 
 .component-fade-enter-active, .component-fade-leave-active {

@@ -1,0 +1,11 @@
+div.card-body>a.btn{
+    color: $sub-1;
+    background-color:$background-sub-3;
+    border-color: $background-prime;
+}
+
+div.card-body>a.btn:hover{
+    color: $pop;
+    border-color: $mute-2;
+    background-color:$background-sub-2;
+}

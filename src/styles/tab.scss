@@ -1,7 +1,7 @@
 /* scss/pallette.scss */
 
 .active-tab {
-    background-color:  $background-sub ;    
+    background-color:  $background-sub-1;
     color: $pop ;
 }
 
@@ -20,7 +20,7 @@ ul > li.nav-item > a.nav-link.active-tab{
     border-top-right-radius: 0rem ;
     border: none ;
     color: $pop;
-    background-color: $background-sub;
+    background-color: $background-sub-1;
     transition: .3s all ease-out;
 }
 
@@ -40,5 +40,5 @@ li.nav-item > a.nav-link:hover{
 }
 
 tab-content{
-    background-color:  $background-sub ;
+    background-color:  $background-sub-1;
 }

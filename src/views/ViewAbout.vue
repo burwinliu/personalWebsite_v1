@@ -6,15 +6,17 @@
             <h1> About me </h1>
         </b-row>
         <b-row no-gutters>
-            <a>
+            <p>
               Hello! I'm Burwin Liu a Computer Scientist, a Software Engineer and a student. I'm currently based in 
-              Irvine at the moment, studying Computer Science at the University of California, Irvine.</a>
-            <a>
+              Irvine at the moment, studying Computer Science at the University of California, Irvine.
+            </p>
+            <p>
               In terms of experience, I have worked with Data Science, Front End Design, Back End Programming and Application Development.
-            </a> <br>
-            <a>
+            </p> 
+            <br>
+            <p>
               Just a few of the technologies I have recently worked with are:
-            </a>
+            </p>
         </b-row>
         <b-row>
           <b-col>
@@ -44,11 +46,22 @@
         </b-row>
       </b-col>
     </b-row>
+    <b-row>
+      <b-col id="Experience" :class="{'page':windowWidth >= 992, 'mobile-page':windowWidth <=992}">
+        <b-row align-h="center" no-gutters>
+          <h1> Projects </h1>
+        </b-row>
+        <b-row no-gutters>
+          <view-about-projects/>
+        </b-row>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
 <script>
 import ViewAboutExperience from '@/views/ViewExperience.vue'
+import ViewAboutProjects from '@/views/ViewAboutProjects.vue'
 
 export default {
   name: "ViewAbout",
@@ -57,6 +70,7 @@ export default {
   },
   components: {
     ViewAboutExperience,
+    ViewAboutProjects,
   },
   data(){
       return{
@@ -81,14 +95,15 @@ export default {
 
 <style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
-a{
+p{
   font-size: 1rem;
 }
 h1{
   font-family: 'Cinzel', serif;
   font-size: 40pt;
   position: relative;
-  color: $sub;
+  color: $sub-1;
+  padding-bottom: 1rem;;
 }
 h2{
   color: $mute-1
@@ -99,12 +114,6 @@ a:hover{
 ul{
   padding: 15px;
 }
-.view-resume{
-  width: 100%; 
-  height: 100%;
-  background-color: $background;  
-}
-
 .page {
   display: flex;
   flex-direction: column;
@@ -113,10 +122,10 @@ ul{
 }
 
 .mobile-page{
-  padding-top:60px;
+  padding-top:20%;
+  padding-bottom: 20%;
   display: flex;
   flex-direction: column;
-  padding-top: 20%;
   height: fit-content;
   min-height: 100vh;
 }

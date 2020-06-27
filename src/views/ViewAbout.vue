@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import ViewAboutExperience from '@/views/ViewExperience.vue'
+import ViewAboutExperience from '@/views/ViewAboutExperience.vue'
 import ViewAboutProjects from '@/views/ViewAboutProjects.vue'
 
 export default {

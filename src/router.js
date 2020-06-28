@@ -12,6 +12,14 @@ const routes = [
     { 
         path: '/', 
         component: Index,
+        meta:{
+            metaTags:[
+                {
+                    name: "google-site-verification",
+                    content:"jKYTAtyoTiABMVXOjAQr81lJZ7YfTxSzqUXkDa4Wyuo",
+                }
+            ]
+        },
         children:[
             {
                 name: 'view-home',
@@ -22,8 +30,8 @@ const routes = [
                     metaTags:[
                         {
                             name: 'description',
-                            content:'Burwin Liu is a Student, Computer Scientist and Software Engineer from Irvine, California. He has worked in everything from Full Stack Development to \
-                            Machine Learning'
+                            content:'Burwin Liu is a Student, Computer Scientist and Software Engineer from Irvine, California. He has worked in everything from Full Stack Development to'
+                                +' Machine Learning'
                         },
                         {
                             name: "google-site-verification",
@@ -38,6 +46,12 @@ const routes = [
                 component: ViewAbout,
                 meta:{
                     title: 'Burwin Liu - About Page',
+                    metaTags:[
+                        {
+                            name: "google-site-verification",
+                            content:"jKYTAtyoTiABMVXOjAQr81lJZ7YfTxSzqUXkDa4Wyuo",
+                        }
+                    ]
                 }
             },
             {
@@ -46,6 +60,13 @@ const routes = [
                 component: ViewContact,
                 meta:{
                     title: 'Burwin Liu - Contact Page',
+                    metaTags:[
+                        {
+                            name: "google-site-verification",
+                            content:"jKYTAtyoTiABMVXOjAQr81lJZ7YfTxSzqUXkDa4Wyuo",
+                        }
+                    ]
+                    
                 }
             },
         ]

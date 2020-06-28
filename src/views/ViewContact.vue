@@ -18,9 +18,6 @@
 <script>
 export default {
     name: "ViewContact",
-    created () {
-      document.title = this.$route.meta.title;
-    },
     data(){
       return{
         windowHeight: window.innerHeight,
@@ -40,7 +37,7 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
 h1{
   font-family: 'Cinzel', serif;
-  font-size: 40pt;
+  font-size: 4rem;
   position: relative;
   color: $sub-1;
   align-self:flex-start;
@@ -48,8 +45,8 @@ h1{
 }
 
 p{
-  color: $primary;
-  font-size: 15pt;
+  color: $sub-1;
+  font-size: 1.25rem;
   margin-bottom: 40px;
 }
 

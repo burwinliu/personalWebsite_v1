@@ -3,9 +3,12 @@
     <div class="wrapper home">
       <b-row class="body-text"><h2>Hi! I am</h2></b-row>
       <b-row class="body-text"><h1>Burwin Liu</h1></b-row>
-      <b-row class="body-text"><p>I am a student of Computer Science and Software Engineering.</p> </b-row>
-      <b-row class="body-text"><b>I work within Software Engineering, from Application Development to Data Science and everything in between </b> </b-row>
-      <b-row class="body-text"><b-button :to="'about'" class="my-3 btn-about"> Find Out More!</b-button></b-row>
+      <b-row class="body-text"><h3>I am a student of Computer Science and Software Engineering.</h3> </b-row>
+      <b-row class="body-text" no-gutters>
+        <b-col><p>Currently, I work within Software Engineering, doing everything from Application Development to Data Science, and much more!</p></b-col>
+        <b-col/>
+      </b-row>
+      <b-row class="body-text py-2 px-2"><b-button :to="'about'" class="my-3 px-4 py-3 btn-about"> Find Out More!</b-button></b-row>
     </div>
   </div>
 </template>
@@ -13,9 +16,6 @@
 <script>
 export default {
     name: "ViewHome",
-    created () {
-      document.title = this.$route.meta.title;
-    },
     data: function(){
       return{
         windowHeight: window.innerHeight,
@@ -43,28 +43,25 @@ export default {
   vertical-align: middle;
 }
 h1{
-  font-size: 50pt;
+  font-size: 5rem;
   font-family: 'Cinzel', serif;
   position: relative;
+  color: $primary;
 }
 h2{
-  font-size: 30pt;
+  font-size: 3rem;
+  color: $sub-1;
+}
+div > h3{
+  font-family: 'Cinzel', serif;
+  font-size: 1.75rem;
+  position: relative;
   color: $sub-1;
 }
 div > p{
-  font-family: 'Cinzel', serif;
-  font-size: large;
+  font-size: 1.25rem;
   position: relative;
-  color: $sub-1;
-}
-div > p:hover{
-  color:  $sub-1;
-}
-b{
-  font-family: 'Cinzel', serif;
-  font-size: medium;
-  position: relative;
-  color: $mute-1;
+  color: $sub-2;
 }
 .view-home{
   width: 100%; 
@@ -80,7 +77,7 @@ b{
   color: $sub-1;
   background-color: $background-sub-1;
   border-color: $background-prime;
-
+  font-size: 1.5rem;
 }
 
 .btn-about:focus{

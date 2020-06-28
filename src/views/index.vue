@@ -51,9 +51,6 @@ export default {
       footerTop: 0,
     }
   },
-  created () {
-    document.title = this.$route.meta.title;
-  },
   mounted () {
     this.routerWidth = document.getElementById("router").offsetWidth;
     if (this.$route.name !=='view-home'){

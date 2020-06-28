@@ -1,12 +1,7 @@
 # personalWebsite
 This is the main entry point to my website, which is found at burwinliu.github.io under my repos. 
-This project involves the use of Vue as the main web technology, with various vue helpers (cli, vuex, svg-loader, bootstrap) and some basic js technologies (jquery and core-js)
+This project involves the use of Vue as the main web technology, with various vue helpers (cli, vuex, svg-loader, bootstrap-vue, vue-router)
 To build it yourself, simply run the command npm run serve, or to build a dist use npm run build.
-
-## ToDo 
-* Add more info on the About page
-* Need to create a status indicator to show where the user is, and allow navigation (like a file system)
-* Create a better intro screen to have more of an impact
 
 ## Color schemes
 Find this scheme at src/styles/pallette.scss

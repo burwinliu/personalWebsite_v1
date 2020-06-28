@@ -15,7 +15,7 @@
             </p> 
             <br>
             <p>
-              Just a few of the technologies I have recently worked with are:
+              Just a few of the technologies I have recently worked with include:
             </p>
         </b-row>
         <b-row>
@@ -65,9 +65,6 @@ import ViewAboutProjects from '@/views/ViewAboutProjects.vue'
 
 export default {
   name: "ViewAbout",
-  created () {
-    document.title = this.$route.meta.title;
-  },
   components: {
     ViewAboutExperience,
     ViewAboutProjects,
@@ -96,16 +93,17 @@ export default {
 <style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
 p{
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 h1{
   font-family: 'Cinzel', serif;
-  font-size: 40pt;
+  font-size: 4rem;
   position: relative;
   color: $sub-1;
   padding-bottom: 1rem;;
 }
 h2{
+  font-size: 1.75rem;
   color: $mute-1
 }
 a:hover{
@@ -113,6 +111,7 @@ a:hover{
 }
 ul{
   padding: 15px;
+  font-size: 1.25rem;
 }
 .page {
   display: flex;

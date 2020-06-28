@@ -166,7 +166,7 @@ export default {
       this.windowHeight = window.innerHeight;
       this.windowWidth = window.innerWidth;
     }
-  },
+  },  
 };
 </script>
 

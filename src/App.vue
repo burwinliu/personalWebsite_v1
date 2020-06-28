@@ -19,7 +19,7 @@ export default {
 <style lang="scss">
 
 html, body, .background{
-  color: $primary;
+  color: $sub-1;
   background-color: $background;
   scrollbar-color: $mute-1 $shadow ;
   scrollbar-arrow-color: $mute-2;

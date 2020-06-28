@@ -70,7 +70,7 @@ export default {
 .card-text{
   margin-bottom: 20px;
   font-size: 1rem;
-  color: $primary;
+  color: $sub-1;
   height:fit-content;
 }
 
@@ -79,13 +79,14 @@ export default {
     transition: 0.3s all ease-out;
 }
 h1{
-    font-size: 24pt;
+    font-size: 2rem;
 }
 h2{
-    font-size: 20pt;
+    font-size: 1.75rem;
 }
 
 ul{
+    font-size: 1.25rem;
     padding-inline-start: 20px;
 }
 

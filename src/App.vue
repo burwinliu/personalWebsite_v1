@@ -24,8 +24,10 @@ html, body, .background{
   scrollbar-color: $mute-1 $shadow ;
   scrollbar-arrow-color: $mute-2;
   z-index: 1;
-  display:table;
+  display:block;
   width:100%;
+  max-width: 100%;
+  overflow-x: hidden;
 
 }
 </style>

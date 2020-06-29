@@ -231,10 +231,10 @@ export default {
 }
 
 .main-body{
-  display:table-row;
+  display:block;
 }
 
 .footer{
-  display:table-row;
+  margin-top: 3rem;
 }
 </style>

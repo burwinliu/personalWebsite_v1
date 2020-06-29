@@ -36,6 +36,7 @@ export default {
         }
     },
     mounted(){
+        this.resize();
         window.addEventListener("resize", this.resize);
     },
     destroyed() {
@@ -45,6 +46,12 @@ export default {
         resize() {
             this.windowWidth = window.innerWidth;
             this.windowHeight = window.innerHeight;
+            if(this.windowWidth <= 992){
+                document.getElementById("nav-collapse").style.flexGrow = "0";
+            }
+            if(this.windowWidth > 992){
+                document.getElementById("nav-collapse").style.flexGrow = "1";
+            }
         }
     },
 }

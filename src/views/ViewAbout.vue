@@ -97,7 +97,7 @@ p{
 }
 h1{
   font-family: 'Cinzel', serif;
-  font-size: 4rem;
+  font-size: 3rem;
   position: relative;
   color: $sub-1;
   padding-bottom: 1rem;;

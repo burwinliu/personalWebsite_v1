@@ -53,6 +53,7 @@ export default {
   },
   mounted () {
     this.routerWidth = document.getElementById("router").offsetWidth;
+        
     if (this.$route.name !=='view-home'){
       this.footerWidth = document.getElementById("footer").offsetWidth;
       this.footerHeight = document.getElementById("footer").offsetHeight;
@@ -115,10 +116,12 @@ export default {
       this.lastScrollPosition = window.pageYOffset;
     },
     collapse(collapseId, isJustShown){
+      this.onScroll();
+      this.resize();
       if(collapseId === "navbar-side-collapse"){
         this.sidebarShown = isJustShown;
         if (this.sidebarShown === true){
-
+          console.log( this.footerTop, this.footerHeight, this.footerWidth)
           document.getElementById("router").style.top = `-${window.scrollY}px`;
           document.getElementById("router").style.width = `${this.routerWidth}px`;
           document.getElementById("router").style.position = 'fixed';
@@ -232,9 +235,5 @@ export default {
 
 .main-body{
   display:block;
-}
-
-.footer{
-  margin-top: 3rem;
 }
 </style>

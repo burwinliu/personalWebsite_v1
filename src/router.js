@@ -86,8 +86,7 @@ router.beforeEach((to, from, next) => {
             var meta = document.createElement('meta');
             meta.name = to.meta.metaTags[i].name;
             meta.content = to.meta.metaTags[i].content;
-            document.getElementsByTagName('head')[0].appendChild(meta);
-            console.log(meta)
+            document.getElementsByTagName('head')[0].appendChild(meta); 
         }
     }
     next()

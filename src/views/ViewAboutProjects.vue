@@ -3,7 +3,7 @@
         <b-col align-h="center">
             <b-row align-h="center">
                 <b-card
-                    style="max-width: 20rem;"
+                    style="max-width: 20rem; min-width: 20rem;"
                     class="mx-2 my-2"
                     bg-variant="dark"
                     text-variant="light"
@@ -22,7 +22,7 @@
                         </ul>
                 </b-card>
                 <b-card
-                    style="max-width: 20rem;"
+                    style="max-width: 20rem; min-width: 20rem;"
                     class="mx-2 my-2"
                     bg-variant="dark"
                     text-variant="light"
@@ -45,7 +45,7 @@
                     </ul>
                 </b-card>
                 <b-card
-                    style="max-width: 20rem;"
+                    style="max-width: 20rem; min-width: 20rem;"
                     class="mx-2 my-2"
                     bg-variant="dark"
                     text-variant="light"

@@ -1,10 +1,10 @@
 <template>
   <div class="align-middle" id="view-contact">
     <div class="page" align-v="center">
-      <b-row>
+      <b-row no-gutters>
           <h1 class="center-text" align-v="center"> Contact </h1>
       </b-row>
-      <b-row>
+      <b-row no-gutters>
           <p class="center-text expand-width"> 
             If you have any questions, got a project idea or just want to chat, I would love to talk. Don't 
             hesitate to contact me below, and I will try my utmost to get back to you — my inbox is open!

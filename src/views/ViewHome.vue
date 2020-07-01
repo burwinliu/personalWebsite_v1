@@ -8,7 +8,12 @@
         <b-col><p>Currently, I work within Software Engineering, doing everything from Application Development to Data Science, and much more!</p></b-col>
         <b-col id="text-wrap-collapse"/>
       </b-row>
-      <b-row class="body-text py-2 px-2"><b-button :to="'about'" class="my-3 px-4 py-3 btn-about"> Find Out More!</b-button></b-row>
+      <b-row class="body-text py-2 px-2">
+        <b-col class="wrap-button">
+          <b-button :to="'about'" class="my-3 px-4 py-3 btn-main">Find Out More!</b-button>
+        </b-col>
+        <b-col/>
+      </b-row>
     </div>
   </div>
 </template>
@@ -85,18 +90,22 @@ div > p{
   margin-right: 0px;
 }
 
-.btn-about{
+.wrap-button{
+  text-align:center;
+}
+
+.btn-main{
   color: $sub-1;
   background-color: $background-sub-1;
   border-color: $background-prime;
   font-size: 1.5rem;
 }
 
-.btn-about:focus{
+.btn-main:focus{
   border-color: $shadow;
 }
 
-.btn-about:hover{
+.btn-main:hover{
   color: $pop;
   border-color: $mute-2;
   background-color:$background-sub-1;

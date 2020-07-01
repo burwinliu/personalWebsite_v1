@@ -18,18 +18,25 @@
 <script>
 export default {
     name: "ViewContact",
-    data(){
+    data: function(){
       return{
         windowHeight: window.innerHeight,
         windowWidth: window.innerWidth,
       }
     },
     mounted() {
-      window.onresize = () => {
+        this.resize()
+        window.addEventListener("resize", this.resize);
+    },
+    beforeDestroy(){
+        window.removeEventListener("resize", this.resize);
+    },
+    methods:{
+      resize(){
         this.windowHeight = window.innerHeight;
         this.windowWidth = window.innerWidth;
       }
-    },
+    }
 }
 </script>
 

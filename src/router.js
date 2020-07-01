@@ -5,6 +5,7 @@ import Index from '@/views/index.vue';
 import ViewHome from '@/views/ViewHome.vue';
 import ViewAbout from '@/views/ViewAbout.vue'
 import ViewContact from '@/views/ViewContact.vue'
+import ViewNotebook from '@/views/ViewNotebook.vue'
 
 Vue.use(Router);
 
@@ -60,6 +61,21 @@ const routes = [
                 component: ViewContact,
                 meta:{
                     title: 'Burwin Liu - Contact Page',
+                    metaTags:[
+                        {
+                            name: "google-site-verification",
+                            content:"jKYTAtyoTiABMVXOjAQr81lJZ7YfTxSzqUXkDa4Wyuo",
+                        }
+                    ]
+                    
+                }
+            },
+            {
+                name: 'view-notebook',
+                path: 'notebook',
+                component: ViewNotebook,
+                meta:{
+                    title: 'Burwin Liu - Notebook Navgiation Page',
                     metaTags:[
                         {
                             name: "google-site-verification",

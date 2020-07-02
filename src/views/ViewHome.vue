@@ -8,10 +8,8 @@
         <b-col><p>Currently, I work within Software Engineering, doing everything from Application Development to Data Science, and much more!</p></b-col>
         <b-col id="text-wrap-collapse"/>
       </b-row>
-      <b-row class="body-text py-2 px-2">
-        <b-col class="wrap-button">
+      <b-row class="body-text py-2 px-4">
           <b-button :to="'about'" class="my-3 px-4 py-3 btn-main">Find Out More!</b-button>
-        </b-col>
         <b-col/>
       </b-row>
     </div>

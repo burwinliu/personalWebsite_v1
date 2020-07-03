@@ -66,9 +66,9 @@ export default {
       ButtonInfoLocal: [
         {id:0, name:"view-about", msg: "About"},
         {id:1, name:"view-contact", msg: "Contact"},
+        {id:2, name:"view-notebook", msg: "Notebook"},
       ],
       ButtonInfoWeb: [
-        {id:2, href:"https://nbviewer.jupyter.org/github/burwinliu/my-jupyter-nb/tree/master/", msg: "Notebook"},
       ],
       expanded: false,
       selectedLogo: false,

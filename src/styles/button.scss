@@ -9,3 +9,15 @@ div.card-body>a.btn:hover{
     border-color: $mute-2;
     background-color:$background-sub-2;
 }
+
+a.btn-nav{
+    color: $sub-1;
+    background-color:$background-sub-3;
+    border-color: $background-prime;
+}
+
+a.btn-nav:hover{
+    color: $pop;
+    border-color: $mute-2;
+    background-color:$background-sub-2;
+}

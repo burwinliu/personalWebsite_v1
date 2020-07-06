@@ -85,7 +85,7 @@ export default {
       resize() {
           this.windowWidth = window.innerWidth;
           this.windowHeight = window.innerHeight;
-      }
+      },
   },
 }
 </script>

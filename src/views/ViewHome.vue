@@ -35,10 +35,10 @@ export default {
       resize(){
         this.windowHeight = window.innerHeight;
         this.windowWidth = window.innerWidth;
-        if(this.windowWidth <= 992){
+        if(this.windowWidth <= 992 && document.getElementById("text-wrap-collapse") != null){
           document.getElementById("text-wrap-collapse").style.flexGrow = "0";
         }
-        if(this.windowWidth > 992){
+        if(this.windowWidth > 992 && document.getElementById("text-wrap-collapse") != null){
           document.getElementById("text-wrap-collapse").style.flexGrow = "1";
         }
       }

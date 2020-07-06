@@ -121,7 +121,6 @@ export default {
       if(collapseId === "navbar-side-collapse"){
         this.sidebarShown = isJustShown;
         if (this.sidebarShown === true){
-          console.log( this.footerTop, this.footerHeight, this.footerWidth)
           document.getElementById("router").style.top = `-${window.scrollY}px`;
           document.getElementById("router").style.width = `${this.routerWidth}px`;
           document.getElementById("router").style.position = 'fixed';

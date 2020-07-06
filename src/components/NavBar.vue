@@ -121,12 +121,12 @@ export default {
         this.yDown = null;                                             
     },
     handleLeftSwipe(){
-      if(document.getElementById("navbar-side-collapse").hasAttribute("aria-hidden")){
+      if(document.getElementById("navbar-side-collapse") != null && document.getElementById("navbar-side-collapse").hasAttribute("aria-hidden")){
         this.$root.$emit('bv::toggle::collapse', 'navbar-side-collapse')
       }
     },
     handleRightSwipe(){
-      if(document.getElementById("navbar-side-collapse").hasAttribute("aria-hidden")){
+      if(document.getElementById("navbar-side-collapse") != null && document.getElementById("navbar-side-collapse").hasAttribute("aria-hidden")){
         if (this.$route.name !=='view-home'){
           this.$router.push({name: 'view-home'});
         }

@@ -2,12 +2,12 @@
   <div id="view-notebook">
     <div class="page">
       <b-row no-gutters>
-          <h1 class="center-text" align-v="center"> Jupyter Notebook — An Overview</h1>
+          <h1 class="center-text" align-v="center"> Jupyter Notebook — An Outline</h1>
           <b-button href="https://nbviewer.jupyter.org/github/burwinliu/my-jupyter-nb/tree/master/" 
           class="btn-nav py-2" 
           :class="btnClass">Take me to the Root!</b-button>
       </b-row>
-      <b-row no-gutters class="px-3 py-4">
+      <b-row id="intro-row" no-gutters class="px-3 py-4">
           <h2 class="center-text" align-v="center">Foreword</h2>
             <p> 
               My Jupyter Notebook contains many of my records and thoughts. Navigation to relevant sections will be found below! Enjoy reading!
@@ -57,6 +57,7 @@
 </template>
 
 <script>
+// TODO fix the width when sidebar opens
 export default {
     name: "ViewNotebook",
     data: function(){
@@ -69,15 +70,21 @@ export default {
           2: "notebook-card-2",
           3: "notebook-card-3",
           4: "notebook-card-4",
-          5: "notebook-card-5",
         },
         accordianDirectory:{
           1:"notebook-accordian-1",
           2:"notebook-accordian-2",
           3:"notebook-accordian-3",
           4:"notebook-accordian-4",
-          5:"notebook-accordian-5"
-        }
+        },
+        allRows: {
+          1:"notebook-accordian-1",
+          2:"notebook-accordian-2",
+          3:"notebook-accordian-3",
+          4:"notebook-accordian-4",
+          5:"intro-row"
+        },
+        rowWidth: 0,
       }
     },
     computed:{
@@ -88,16 +95,19 @@ export default {
       }
     },
     mounted() {
-        this.resize()
+        this.resize();
         window.addEventListener("resize", this.resize);
+        this.$root.$on('bv::collapse::state', this.collapse);
     },
     beforeDestroy(){
         window.removeEventListener("resize", this.resize);
+        this.$root.$off('bv::collapse::state', this.collapse);
     },
     methods:{
       resize(){
         this.windowHeight = window.innerHeight;
         this.windowWidth = window.innerWidth;
+        this.rowWidth = document.getElementById("intro-row").offsetWidth;
       },
       click(item){        
         if(this.opened != -1){
@@ -111,6 +121,27 @@ export default {
         this.$root.$emit('bv::toggle::collapse', this.cardDirectory[item]);
         document.getElementById(this.accordianDirectory[item]).classList.add("select-row");
         this.opened = item;
+      },
+      collapse(collapseId, isJustShown){
+        if(collapseId === "navbar-side-collapse"){
+          let shown = isJustShown;
+          if (shown === true){
+            for(let i in this.allRows){
+              if (document.getElementById(this.allRows[i]) !== null){
+                
+                document.getElementById(this.allRows[i]).style.width = `${this.rowWidth}px`;
+              }
+              
+            }
+          }
+          else{
+            for(let i in this.allRows){
+              if (document.getElementById(this.allRows[i]) !== null){
+                document.getElementById(this.allRows[i]).style.width = '';
+              }
+            }
+          }
+        }
       },
     }
 }

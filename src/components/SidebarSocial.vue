@@ -46,10 +46,10 @@ export default {
         resize() {
             this.windowWidth = window.innerWidth;
             this.windowHeight = window.innerHeight;
-            if(this.windowWidth <= 992){
+            if(document.getElementById("navbar-collapse") != null && this.windowWidth <= 992){
                 document.getElementById("nav-collapse").style.flexGrow = "0";
             }
-            if(this.windowWidth > 992){
+            if(document.getElementById("navbar-collapse") != null && this.windowWidth > 992){
                 document.getElementById("nav-collapse").style.flexGrow = "1";
             }
         }

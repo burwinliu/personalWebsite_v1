@@ -9,6 +9,47 @@
                     text-variant="light"
                 >
                     <b-row class= "proj-title-wrapper px-3 pb-2">
+                        <h4 class="proj-card-title">Electro Git</h4>
+                        <b-nav-item href="https://github.com/burwinliu/electro-git" class="animate-hover svg-container"><logo-github class="svg"/></b-nav-item>
+                    </b-row>
+                    <b-card-text>
+                    An open-source Git GUI Application, built with Electron.JS and React. Built with functionality in
+                    mind, with weekly meetings and ever changing specifications
+                    </b-card-text>
+                    <ul class="proj-tools proj-tools-list mt-5">
+                            <li>Electron.JS</li>
+                            <li>React</li>
+                            <li>Redux</li>
+                            <li>Webpack</li>
+                        </ul>
+                </b-card>
+                <b-card
+                    style="max-width: 20rem; min-width: 20rem;"
+                    class="mx-2 my-2"
+                    bg-variant="dark"
+                    text-variant="light"
+                >
+                    <b-row class= "proj-title-wrapper px-3 pb-2">
+                        <h4 class="proj-card-title">Raspberry Pi Interface</h4>
+                        <b-nav-item href="https://github.com/yarwinliu/raspiInterface" class="animate-hover svg-container"><logo-github class="svg"/></b-nav-item>
+                    </b-row>
+                    <b-card-text>
+                    Raspberry Pi with a web interface -- connect and test Raspberry Pi interactions with a web application
+                    </b-card-text>
+                    <ul class="proj-tools proj-tools-list mt-5">
+                            <li>Raspberry Pi</li>
+                            <li>React</li>
+                            <li>Typescript</li>
+                            <li>Flask</li>
+                        </ul>
+                </b-card>
+                <b-card
+                    style="max-width: 20rem; min-width: 20rem;"
+                    class="mx-2 my-2"
+                    bg-variant="dark"
+                    text-variant="light"
+                >
+                    <b-row class= "proj-title-wrapper px-3 pb-2">
                         <h4 class="proj-card-title">jpgViewer</h4>
                         <b-nav-item href="https://github.com/burwinliu/jpgViewer" class="animate-hover svg-container"><logo-github class="svg"/></b-nav-item>
                     </b-row>
@@ -21,6 +62,9 @@
                             <li>openCV</li>
                         </ul>
                 </b-card>
+            </b-row>
+            <b-row align-h="center">
+                
                 <b-card
                     style="max-width: 20rem; min-width: 20rem;"
                     class="mx-2 my-2"
@@ -100,6 +144,7 @@ export default {
 <style lang="scss" scoped>
 .projects-wrapper{
     width: 100%;
+    padding-bottom: 5%;
 }
 
 .right-align{

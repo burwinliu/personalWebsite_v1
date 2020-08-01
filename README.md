@@ -3,6 +3,9 @@ This is the main entry point to my website, which is found at burwinliu.github.i
 This project involves the use of Vue as the main web technology, with various vue helpers (cli, vuex, svg-loader, bootstrap-vue, vue-router)
 To build it yourself, simply run the command npm run serve, or to build a dist use npm run build.
 
+![Home Page Demo](./public/homeSnapshot.png)
+
+
 ## Color schemes
 Find this scheme at src/styles/pallette.scss
 $shadow: #01060e;

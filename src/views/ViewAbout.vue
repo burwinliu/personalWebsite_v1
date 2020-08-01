@@ -21,7 +21,7 @@
         <b-row>
           <b-col>
             <ul>
-              <li>Node.JS</li>
+              <li>React</li>
               <li>Vue</li>
               <li>JavaScript</li>
             </ul>

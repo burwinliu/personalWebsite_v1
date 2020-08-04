@@ -33,16 +33,29 @@ const routes = [
                     metaTags:[
                         {
                             name: 'description',
-                            content:'Burwin Liu is a Student, Computer Scientist and Software Engineer from Irvine, California. He has worked in everything from Full Stack Development to'
-                                +' Machine Learning'
+                            content:'Burwin Liu is a Student, Computer Scientist and Software Engineer from Irvine, California. \
+                                He has worked in everything from Full Stack Development to Machine Learning'
                         },
                         {
                             name: "google-site-verification",
                             content:"jKYTAtyoTiABMVXOjAQr81lJZ7YfTxSzqUXkDa4Wyuo",
                         },
                         {
+                            property: 'og:url',
+                            content: 'https://burwinliu.github.io/#/'
+                        },
+                        {
                             property: 'og:image',
                             content: '/homeSnapshot.png',
+                        },
+                        {
+                            property: 'og:title',
+                            content: 'Burwin Liu -- Home Page'
+                        },
+                        {
+                            property: 'og:description',
+                            content: "Burwin Liu is a Student, Computer Scientist and Software Engineer from Irvine,\
+                                California. He has worked in everything from Full Stack Development to Machine Learning",
                         },
                     ]
                 },

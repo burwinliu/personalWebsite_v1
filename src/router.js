@@ -29,8 +29,8 @@ const routes = [
                 meta:[
                     { title: 'Burwin Liu: Software Engineer and Student'},
                     {
-                        itemprop: 'image',
-                        content: 'test'
+                        property: 'og:image',
+                        content: '/homeSnapshot.png'
                     },
                     {
                         metaTags:[

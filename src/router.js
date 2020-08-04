@@ -106,9 +106,7 @@ router.beforeEach((to, from, next) => {
         for (let i = 0; i<to.meta.metaTags.length; ++i){
             var meta = document.createElement('meta');
             for (let j in to.meta.metaTags[i]){
-                
-                meta[j] = to.meta.metaTags[i][j]
-                console.log(j, meta[j])
+                meta.setAttribute(j, to.meta.metaTags[i][j]);
             }
             document.getElementsByTagName('head')[0].appendChild(meta); 
         }

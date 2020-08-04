@@ -26,26 +26,26 @@ const routes = [
                 name: 'view-home',
                 path: '',
                 component: ViewHome,
-                meta:[
-                    { title: 'Burwin Liu: Software Engineer and Student'},
-                    {
-                        property: 'og:image',
-                        content: '/homeSnapshot.png'
-                    },
-                    {
-                        metaTags:[
-                            {
-                                name: 'description',
-                                content:'Burwin Liu is a Student, Computer Scientist and Software Engineer from Irvine, California. He has worked in everything from Full Stack Development to'
-                                    +' Machine Learning'
-                            },
-                            {
-                                name: "google-site-verification",
-                                content:"jKYTAtyoTiABMVXOjAQr81lJZ7YfTxSzqUXkDa4Wyuo",
-                            }
-                        ]
-                    }
-                ],
+                meta:{
+                    
+                    title: 'Burwin Liu: Software Engineer and Student',
+                   
+                    metaTags:[
+                        {
+                            name: 'description',
+                            content:'Burwin Liu is a Student, Computer Scientist and Software Engineer from Irvine, California. He has worked in everything from Full Stack Development to'
+                                +' Machine Learning'
+                        },
+                        {
+                            name: "google-site-verification",
+                            content:"jKYTAtyoTiABMVXOjAQr81lJZ7YfTxSzqUXkDa4Wyuo",
+                        },
+                        {
+                            property: 'og:image',
+                            content: '/homeSnapshot.png',
+                        },
+                    ]
+                },
             },
             {
                 name: 'view-about',
@@ -103,11 +103,13 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
     document.title = to.meta.title
     if (to.meta.metaTags != undefined){
-        var i;
-        for (i = 0; i<to.meta.metaTags.length; ++i){
+        for (let i = 0; i<to.meta.metaTags.length; ++i){
             var meta = document.createElement('meta');
-            meta.name = to.meta.metaTags[i].name;
-            meta.content = to.meta.metaTags[i].content;
+            for (let j in to.meta.metaTags[i]){
+                
+                meta[j] = to.meta.metaTags[i][j]
+                console.log(j, meta[j])
+            }
             document.getElementsByTagName('head')[0].appendChild(meta); 
         }
     }

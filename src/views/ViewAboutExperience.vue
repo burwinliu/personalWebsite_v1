@@ -32,7 +32,7 @@
                         </ul>
                     </b-card-text>
                 </b-tab>
-                <b-tab title="Schneider Electric Virtual Student Experience">
+                <b-tab title="Schneider Electric Internship">
                     <b-card-text id="card-2" class="card-text">
                         <h1>Intern</h1>
                         <h2>July 2020 – Present</h2>

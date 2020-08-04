@@ -41,6 +41,7 @@
                             <li>React</li>
                             <li>Typescript</li>
                             <li>Flask</li>
+                            <li>GitHub Actions</li>
                         </ul>
                 </b-card>
                 <b-card

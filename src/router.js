@@ -26,20 +26,26 @@ const routes = [
                 name: 'view-home',
                 path: '',
                 component: ViewHome,
-                meta:{
-                    title: 'Burwin Liu: Software Engineer and Student',
-                    metaTags:[
-                        {
-                            name: 'description',
-                            content:'Burwin Liu is a Student, Computer Scientist and Software Engineer from Irvine, California. He has worked in everything from Full Stack Development to'
-                                +' Machine Learning'
-                        },
-                        {
-                            name: "google-site-verification",
-                            content:"jKYTAtyoTiABMVXOjAQr81lJZ7YfTxSzqUXkDa4Wyuo",
-                        }
-                    ]
-                },
+                meta:[
+                    { title: 'Burwin Liu: Software Engineer and Student'},
+                    {
+                        itemprop: 'image',
+                        content: 'test'
+                    },
+                    {
+                        metaTags:[
+                            {
+                                name: 'description',
+                                content:'Burwin Liu is a Student, Computer Scientist and Software Engineer from Irvine, California. He has worked in everything from Full Stack Development to'
+                                    +' Machine Learning'
+                            },
+                            {
+                                name: "google-site-verification",
+                                content:"jKYTAtyoTiABMVXOjAQr81lJZ7YfTxSzqUXkDa4Wyuo",
+                            }
+                        ]
+                    }
+                ],
             },
             {
                 name: 'view-about',

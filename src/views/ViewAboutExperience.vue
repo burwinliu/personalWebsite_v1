@@ -38,11 +38,11 @@
                         <h2>July 2020 – Present</h2>
                         <ul>
                             <li>
-                                Attended daily meetings with top executives, representatives and employees, 
-                                discussing Schneider’s workflow, company model and future direction
+                                Attended daily meetings with top executives, representatives and current employees
                             </li>
                             <li>
-                                Networked and Connected with over 100 interns to generate a conducive environment for learning
+                                Experienced and learned about Schneider’s workflow, model and future direction towards 
+                                cutting-edge technologies like IoT and virtualized systems
                             </li>
                         </ul>
                     </b-card-text>

@@ -13,8 +13,8 @@
                         <b-nav-item href="https://github.com/burwinliu/electro-git" class="animate-hover svg-container"><logo-github class="svg"/></b-nav-item>
                     </b-row>
                     <b-card-text>
-                    An open-source Git GUI Application, built with Electron.JS and React. Built with functionality in
-                    mind, with weekly meetings and ever changing specifications
+                        An open-source Git GUI Application, built with Electron.JS and React. Built with functionality in
+                        mind, with weekly meetings and ever changing specifications
                     </b-card-text>
                     <ul class="proj-tools proj-tools-list mt-5">
                             <li>Electron.JS</li>
@@ -34,7 +34,7 @@
                         <b-nav-item href="https://github.com/yarwinliu/raspiInterface" class="animate-hover svg-container"><logo-github class="svg"/></b-nav-item>
                     </b-row>
                     <b-card-text>
-                    Raspberry Pi with a web interface -- connect and test Raspberry Pi interactions with a web application
+                        Raspberry Pi controls as a web interface -- connect and test Raspberry Pi interactions with a web application and a Flask back-end
                     </b-card-text>
                     <ul class="proj-tools proj-tools-list mt-5">
                             <li>Raspberry Pi</li>
@@ -55,13 +55,13 @@
                         <b-nav-item href="https://github.com/burwinliu/jpgViewer" class="animate-hover svg-container"><logo-github class="svg"/></b-nav-item>
                     </b-row>
                     <b-card-text>
-                    Livestreaming camera video feed to be parsed with Computer Vision for human faces. 
-                    A work in progress, now with camera client, web client interface and server-side scripts 
+                        Livestreaming camera video feed to be parsed with Computer Vision for human faces. 
+                        A work in progress, now with camera client, web client interface and server-side scripts 
                     </b-card-text>
                     <ul class="proj-tools proj-tools-list mt-5">
-                            <li>Django</li>
-                            <li>openCV</li>
-                        </ul>
+                        <li>Django</li>
+                        <li>openCV</li>
+                    </ul>
                 </b-card>
             </b-row>
             <b-row align-h="center">
@@ -78,7 +78,7 @@
                     </b-row>
                     <b-card-text>
                         A web applicaton to get family trees straight -- an excercise in Database Programming, REST APIs,
-                         Full Stack Development and much more! In progress, and moving forwards.
+                        Full Stack Development and much more! In progress, and moving forwards.
                     </b-card-text>
                     <ul class="proj-tools proj-tools-list mt-5">
                         <li>mySQL</li>
@@ -147,12 +147,20 @@ export default {
     width: 100%;
     padding-bottom: 5%;
 }
+.proj-title-wrapper{
+    display:flex;
+    flex-wrap: nowrap;
+
+}
 
 .right-align{
     margin-left:auto;
 }
 
 .proj-tools{
+    display: flex;
+    flex-wrap: wrap;
+
     font-size: .85rem;
     color: $sub-1;
 }
@@ -183,6 +191,7 @@ svg:hover{
 }
 .svg-container{
     margin-left:auto;
+    padding-left: 1rem;
 }
 li{
     list-style-type: none;

@@ -4,16 +4,9 @@
       id="logo" 
       class="logo router-link focus" 
       :class="{'logo-large':this.windowWidth >= 992}" 
-      :to="{name: 'view-home'}" 
-      @mouseover="hovered()" 
-      @mouseleave="unhovered()" 
-      @click="selected()"
+      :to="{name: 'view-home'}"
     >
-      <transition name="fade">
-        <img v-if="!this.hoverLogo && !this.selectedLogo" :src="require(`@/assets/dark-logo.png`)" alt= "imageAltReg" key="imageAltReg"/>
-        <img v-if="this.hoverLogo && !this.selectedLogo" :src="require(`@/assets/dark-logo-hovered.png`)" alt= "imageAltHov" key= "imageAltHov"/>
-        <img v-if="this.selectedLogo" :src="require(`@/assets/dark-logo-selected.png`)" alt= "imageAltSel" key= "imageAltSel"/>
-      </transition>
+      <BurwinLogo class="svg"/>
     </b-navbar-brand>
 
     <div class="absolute_position" align="right" >
@@ -58,9 +51,13 @@
 </template>
 
 <script>
+import BurwinLogo from '../assets/burwin-logo.svg'
 
 export default {
   name: 'NavBar',
+  components:{
+    BurwinLogo
+  },
   data() {
     return{
       ButtonInfoLocal: [
@@ -71,8 +68,6 @@ export default {
       ButtonInfoWeb: [
       ],
       expanded: false,
-      selectedLogo: false,
-      hoverLogo: false,
       windowHeight: window.innerHeight,
       windowWidth: window.innerWidth,
     };
@@ -134,25 +129,6 @@ export default {
       else{
         this.$root.$emit('bv::toggle::collapse', 'navbar-side-collapse')
       }
-    },
-    checkClick(evt){
-      if(document.getElementById("logo").contains(evt.target)){
-        this.selectedLogo = true;
-        this.hoverLogo = true;
-      }
-      else{
-        this.selectedLogo = false;
-        this.hoverLogo = false;
-      }
-    },
-    selected(){
-      this.selectedLogo = true;
-    },
-    hovered(){
-      this.hoverLogo = true;
-    },
-    unhovered(){
-      this.hoverLogo = false;
     },
     onShown(shown){
       if (shown === true){
@@ -241,11 +217,11 @@ a:active, a:focus {
   color: $primary ;
 }
 
-.logo-large img{
+.logo-large > svg{
   left:33px ;
 }
 
-.logo img{ 
+.logo > svg{ 
   position: absolute;
   z-index: 10;
   top: 8px;
@@ -255,16 +231,17 @@ a:active, a:focus {
   max-height: 40px;
 }
 
-.fade-enter-active{
-  transition: opacity .25s;
+.logo > svg > path{ 
+  fill: $sub-1;
+
+  transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1); 
 }
-.fade-leave-active {
-  transition: opacity .4s;
+
+.logo:hover > svg > path{ 
+  fill: $pop;
 }
-.fade-enter-to, .fade-leave{
-  opacity: 1;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
+
+.logo:active, .logo:focus > svg > path{ 
+  fill: $primary;
 }
 </style>

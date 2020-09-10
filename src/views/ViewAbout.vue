@@ -21,16 +21,16 @@
         <b-row>
           <b-col>
             <ul>
-              <li>React</li>
-              <li>Vue</li>
-              <li>JavaScript</li>
+              <li>DevOps (CI/CD / GitHub Actions)</li>
+              <li>JavaScript Frameworks (React, Vue)</li>
+              <li> Cloud Computing Technology (AWS)</li>
             </ul>
           </b-col>
           <b-col>
             <ul>
-              <li>SQL</li>
-              <li>Python</li>
-              <li>Android Studio</li>
+              <li>Relational Databases (mySQL, Postgres)</li>
+              <li>Machine Learning (Computer Vision w/ SciKitLearn)</li>
+              <li>Application Development (Android, Electron)</li>
             </ul>
           </b-col>
         </b-row>

@@ -10,43 +10,50 @@
                 content-class="custom-card"
                 no-fade
             >
-                <b-tab title="University of California, Irvine">
-                    <b-card-text id="card-1" class="card-text">
-                        <h1>Undergraduate Research on Graph Algorithms </h1>
-                        <h2>March 2020 – Present</h2>
-                        <ul>
-                            <li>
-                                Compiled a database of Orthologs (Related Genes/Nodes between two graphs,
-                                found through biological research) of over 200 GB from over 25 separate 
-                                data sources
-                            </li>
-                            <li>
-                                Discovered over 40 competing alignment algorithms and compiled and parsed 
-                                over 10 those algorithms to compare performance against created Local 
-                                Network Alignment algorithm
-                            </li>
-                            <li>
-                                Mentored a fellow undergraduate researcher and assisted in familiarizing a 
-                                newcomer with established systems
-                            </li>
-                        </ul>
-                    </b-card-text>
-                </b-tab>
                 <b-tab title="Schneider Electric Internship">
                     <b-card-text id="card-2" class="card-text">
                         <h1>Intern</h1>
-                        <h2>July 2020 – Present</h2>
+                        <h2>July 2020 – September 2020</h2>
                         <ul>
                             <li>
-                                Attended daily meetings with top executives, representatives and current employees
+                                Designed POC cross-platform GUI application, implemented Git features such as HTTP(S) and SSH
+                                cloning, Diffing, Branching, Merging and History using Electron, React and Redux
                             </li>
                             <li>
-                                Experienced and learned about Schneider’s workflow, model and future direction towards 
-                                cutting-edge technologies like IoT and virtualized systems
+                                Converted High Level Objectives into rapid prototypes; presented and provided reports to Senior
+                                Software Engineers on viability, CVSS security and features of Distributed Version Control/Git
+                            </li>
+                            <li>
+                                Enacted HTML Web server application with OSI model, Sockets, HTTP and TCP/IP in C++ 
+                            </li>
+                            <li>
+                                Studied Agile engineering practices of decomposing project execution into sprints, daily scrum
+                                meetings and rapid prototyping
+                            </li>
+                            <li>
+                                Learned how IoT and virtualization would impact industrial automation’s future from top executives
                             </li>
                         </ul>
                     </b-card-text>
                 </b-tab>
+                <b-tab title="University of California, Irvine">
+                    <b-card-text id="card-1" class="card-text">
+                        <h1>Undergraduate Researcher</h1>
+                        <h2>March 2020 – June 2020</h2>
+                        <ul>
+                            <li>
+                                Compiled a database of orthologs (Related Genes/Nodes between two graphs, found through
+                                biological research) from various sources, writing bash scripts and SQL queries to parse through over
+                                200 GB of data from over 25 separate data sources for analysis by UCI Researchers
+                            </li>
+                            <li>
+                                Analyzed over 40 competing alignment algorithms, parsed over 10 those algorithms to benchmark
+                                performance against in house Local Network Alignment algorithm for data in Research Paper
+                            </li>
+                        </ul>
+                    </b-card-text>
+                </b-tab>
+                
             </b-tabs>
         </b-card-group>
     </div>

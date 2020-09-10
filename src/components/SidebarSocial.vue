@@ -6,7 +6,7 @@
                     <b-nav-item href="mailto:burwinliu1@gmail.com" class="animate-hover svg-container"><logo-email class="svg"/></b-nav-item>
                     <b-nav-item href="https://github.com/burwinliu" class="animate-hover svg-container"><logo-github class="svg"/></b-nav-item>
                     <b-nav-item href="https://www.linkedin.com/in/burwin-liu" class="animate-hover svg-container"> <logo-linked-in class="svg"/></b-nav-item>
-                    <b-nav-item href="https://drive.google.com/file/d/1evpw1h3iyJZBiShfxS2JuqDXmnP7peXJ/view?usp=sharing" class="animate-hover svg-container">
+                    <b-nav-item href="https://drive.google.com/file/d/1h1tqthk4UuhLNKMrZlxszf94DkmhC4Gu/view?usp=sharing" class="animate-hover svg-container">
                         <logo-resume class="svg"/>
                     </b-nav-item>
                 </b-nav>

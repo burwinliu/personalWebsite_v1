@@ -10,6 +10,18 @@
                 content-class="custom-card"
                 no-fade
             >
+                <b-tab title="Amazon SDE Intern">
+                    <b-card-text id="card-2" class="card-text">
+                        <h1>Intern</h1>
+                        <h2>June 2021 – Present</h2>
+                        <ul>
+                            <li>
+                                Stay Tuned~ 
+                            </li>
+
+                        </ul>
+                    </b-card-text>
+                </b-tab>
                 <b-tab title="Schneider Electric Internship">
                     <b-card-text id="card-2" class="card-text">
                         <h1>Intern</h1>
